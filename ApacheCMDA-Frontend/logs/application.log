@@ -1,24 +1,45 @@
-2015-09-22 02:33:46,484 - [INFO] - from play in pool-4-thread-1 
+2015-11-03 16:02:20,443 - [INFO] - from play in pool-4-thread-2 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-09-22 02:36:00,747 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-03 16:02:29,227 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-09-22 02:36:01,057 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-03 16:02:31,574 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:file:data/db
 
-2015-09-22 02:36:01,847 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-03 16:02:32,520 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-09-22 02:36:14,001 - [INFO] - from application in play-akka.actor.default-dispatcher-7 
-http://localhost:9034/climateService/getAllClimateServices/json
+2015-11-03 16:04:10,998 - [INFO] - from play in play-internal-execution-context-2 
+datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-09-22 02:37:16,026 - [INFO] - from application in play-akka.actor.default-dispatcher-7 
-http://localhost:9034/climateService/getAllClimateServices/json
+2015-11-03 16:04:11,004 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:h2:file:data/db
 
-2015-09-22 02:37:20,256 - [INFO] - from application in play-akka.actor.default-dispatcher-15 
+2015-11-03 16:04:11,158 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-11-03 16:04:14,054 - [INFO] - from application in play-akka.actor.default-dispatcher-14 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:17,236 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:18,589 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:20,572 - [INFO] - from application in play-akka.actor.default-dispatcher-16 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:22,289 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
 http://localhost:9034/dataset/getAllDatasets/json
 
-2015-09-22 02:37:36,039 - [INFO] - from application in play-akka.actor.default-dispatcher-18 
-http://localhost:9034/dataset/getAllDatasets/json
+2015-11-03 16:04:25,225 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:28,267 - [INFO] - from application in play-akka.actor.default-dispatcher-8 
+http://localhost:9034/workflow/getNumEntry
+
+2015-11-03 16:04:31,661 - [INFO] - from application in play-akka.actor.default-dispatcher-16 
+http://localhost:9034/workflow/getNumEntry
 

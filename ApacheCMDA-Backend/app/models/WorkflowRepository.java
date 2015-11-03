@@ -16,13 +16,16 @@
  */
 package models;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.List;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 @Named
 @Singleton
-public interface WorkflowRepository extends CrudRepository<Workflow, Long> {
+public interface WorkflowRepository extends PagingAndSortingRepository<Workflow, Long> {
 
+    List<User> findByName(String name);
 }

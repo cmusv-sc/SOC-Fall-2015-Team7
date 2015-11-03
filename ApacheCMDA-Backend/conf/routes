@@ -6,6 +6,13 @@
 # will call on the GlobalSettings.getController method to resolve the actual controller instance.
 # GET     /                           @controllers.Application.index
 
+# Workflow
+GET		  		/workflow/getAllWorkflows/json				@controllers.WorkflowController.getAllWorkflows(format: String="json")
+GET		  		/workflow/getPageWorkflows/json				@controllers.WorkflowController.getPageWorkflows(format: String="json", page: Int?=1, size: Int?=10)										
+GET				/workflow/getNumEntry						@controllers.WorkflowController.getNumEntry
+POST		  	/workflow/newWorkflow						@controllers.WorkflowController.addWorkflow
+DELETE        /workflow/deleteWorkflow/id/:id 				@controllers.WorkflowController.deleteWorkflowById(id: Long)
+
 # Climate Service
 GET           /climateService/getClimateService/:name/json                                              @controllers.ClimateServiceController.getClimateService(name: String, format: String="json")
 GET           /climateService/getClimateService/id/:id                                                  @controllers.ClimateServiceController.getClimateServiceById(id: Long)
