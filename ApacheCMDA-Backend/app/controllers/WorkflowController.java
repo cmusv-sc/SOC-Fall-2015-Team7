@@ -73,6 +73,17 @@ public class WorkflowController extends Controller{
 		return ok(workflows);
 	}
 	
+	public Result getOneWorkflow(String format, long id) {
+		List<Workflow> result = workflowRepository.findById(id);
+		
+		String workflow = null;
+		if (format.equals("json")) {
+			workflow = new Gson().toJson(result.get(0));
+		}
+		
+		return ok(workflow);
+	}
+	
 	public Result getNumEntry() {
 		JsonObject rtn = new JsonObject();
 		rtn.addProperty("numEntry", workflowRepository.count());

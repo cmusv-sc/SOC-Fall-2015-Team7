@@ -17,6 +17,8 @@ public class Workflow {
 	private static final String GET_ALL_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getAllWorkflows/json";
 	private static final String GET_PAGE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getPageWorkflows/json";
 	private static final String GET_NUM_ENTRY = Constants.NEW_BACKEND+"workflow/getNumEntry";
+	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
+	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
 	private String id;
 	private String workflowName;
 	private String purpose;
@@ -75,8 +77,7 @@ public class Workflow {
 	public static List<Workflow> all() {
 		List<Workflow> workflows = new ArrayList<Workflow>();
 
-		JsonNode workflowsNode = APICall
-				.callAPI(GET_ALL_WORKFLOW_CALL);
+		JsonNode workflowsNode = APICall.callAPI(GET_ALL_WORKFLOW_CALL);
 
 		if (workflowsNode == null || workflowsNode.has("error")
 				|| !workflowsNode.isArray()) {
@@ -121,6 +122,29 @@ public class Workflow {
 			workflows.add(newWorkflow);
 		}
 		return workflows;
+	}
+	
+	public static Workflow one(long id) {
+		JsonNode json;
+		json = APICall.callAPI(GET_ONE_WORKFLOW_CALL+String.valueOf(id));
+		if (json == null || json.has("error")
+				|| json.isArray()) {
+			return null;
+		}
+		
+		Workflow newWorkflow = new Workflow();
+		newWorkflow.setId(json.path("id").asText());
+		newWorkflow.setWorkflowName(json.get("name").asText());
+		newWorkflow.setPurpose(json.path("purpose").asText());
+		newWorkflow.setCreateTime(json.path("createTime").asText());
+		newWorkflow.setVersionNo(json.path("versionNo").asText());
+		newWorkflow.setRootWorkflowId(json.path("rootWorkflowId").asLong());
+		
+		return newWorkflow;
+	}
+	
+	public static JsonNode create(JsonNode jsonData) {
+		return APICall.postAPI(ADD_WORKFLOW_CALL, jsonData);
 	}
 	
 	public static int getNumPage() {

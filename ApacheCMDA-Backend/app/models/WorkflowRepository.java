@@ -27,5 +27,7 @@ import javax.inject.Singleton;
 @Singleton
 public interface WorkflowRepository extends PagingAndSortingRepository<Workflow, Long> {
 
-    List<User> findByName(String name);
+	List<Workflow> findByName(String name);
+	List<Workflow> findById(long id);
+	
 }
