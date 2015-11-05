@@ -1,2 +1,3 @@
 #!/usr/bin/bash
-./ApacheCMDA-Backend/activator run
+cd ApacheCMDA-Frontend
+./activator run

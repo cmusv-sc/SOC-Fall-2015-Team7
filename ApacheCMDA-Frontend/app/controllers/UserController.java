@@ -17,16 +17,56 @@
 
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.metadata.User;
+import util.APICall;
 import play.mvc.*;
-import views.html.climate.*;
+import play.libs.Json;
+import views.html.*;
+import play.data.DynamicForm;
 
-public class AboutusController extends Controller {
+public class UserController extends Controller {
 
     public static Result registerPage() {
-    	return ok(registerus.render());
+    	return ok(registerus.render("test"));
+    }
+    public static Result loginPage() {
+    	return ok(login.render("test"));
     }
 
     public static Result registerUser(){
-    	return ok(aboutProject.render("test"));
+	    DynamicForm df = DynamicForm.form().bindFromRequest();
+	    String email = df.field("email").value();
+	    String password = df.field("password").value();
+	    String firstName = df.field("firstName").value();
+	    String lastName = df.field("lastName").value();
+
+		ObjectNode jsonData = Json.newObject();
+		jsonData.put("userName", email);
+		jsonData.put("email", email);
+		jsonData.put("password", password);
+		jsonData.put("firstName", firstName);
+		jsonData.put("lastName", lastName);
+		JsonNode response = User.create(jsonData);
+		Application.flashMsg(response);
+	
+	System.out.println(response.toString());
+
+	    return ok(registerus.render("test"));
+    }
+
+    public static Result loginUser(){
+	    DynamicForm df = DynamicForm.form().bindFromRequest();
+	    String email = df.field("email").value();
+	    String password = df.field("password").value();
+		ObjectNode jsonData = Json.newObject();
+		jsonData.put("email", email);
+		jsonData.put("password", password);
+
+		JsonNode response = User.auth(jsonData);
+		Application.flashMsg(response);
+
+    	return ok(login.render("test"));
     }
 }

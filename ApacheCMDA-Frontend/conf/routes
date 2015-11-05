@@ -42,5 +42,7 @@ GET     	/assets/*file               						controllers.Assets.at(path="/public",
 
 
 # About user and registeration
-GET     	/user/register               						controllers.UserController.registerPage()
-POST     	/user/register               						controllers.UserController.register()
+GET     	/register               						controllers.UserController.registerPage()
+POST     	/register               						controllers.UserController.registerUser()
+GET     	/login									controllers.UserController.loginPage()
+POST     	/login									controllers.UserController.loginUser()

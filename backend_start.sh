@@ -1,2 +1,3 @@
 #!/usr/bin/bash
-./ApacheCMDA-Backend/activator "run 9034 "
+cd ApacheCMDA-Backend
+./activator "run 9034 "

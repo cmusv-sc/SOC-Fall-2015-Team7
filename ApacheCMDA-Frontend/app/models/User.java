@@ -199,6 +199,5 @@ public class User {
 				+ ", researchFields=" + researchFields + ", highestDegree="
 				+ highestDegree + "]";
 	}
-
 }
 

@@ -20,24 +20,18 @@
 @flash_message()
 
 
-@main("Register") {
+@main("Sgin in") {
 
 
-<h1>Register</h1>
+<h1>Sign in</h1>
 <hr>
-<form action="/register" method="post">
+<form action="/login" method="post">
     <label for="email">Email</label>
     <input type="text" name="email" id="email"></input>
     <br>
     <label for="password">Password</label>
     <input type="password" name="password" id="password"></input>
-    <br>
-    <label for="firstName">First Name</label>
-    <input type="text" name="firstName" id="firstName"></input>
-    <br>
-    <label for="lastName">Last Name</label>
-    <input type="text" name="lastName" id="lastName"></input>
-<input type="submit" value="Sign up"/>
+<input type="submit" value="Sign in"/>
 	
 </form>
 }
