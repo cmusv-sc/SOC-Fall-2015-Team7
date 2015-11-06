@@ -18,6 +18,12 @@ POST        /solve/report                                        controllers.Bug
 GET         /aboutus                                             controllers.AboutusController.aboutUs()
 GET         /aboutProject                                        controllers.AboutusController.aboutProject()
 
+# Workflow system
+GET			/workflow											controllers.WorkflowController.home(page: Int?=1)
+GET			/workflow/:id										controllers.WorkflowController.workflow(id:Long)
+GET			/workflow/new/workflow								controllers.WorkflowController.addWorkflow()
+POST		/workflow/new/workflow								controllers.WorkflowController.newWorkflow()	
+
 # Climate Model
 GET			/climate											controllers.ClimateServiceController.home(email ?= null, vfile ?= null, dataset ?= null)
 GET			/climate/tutorial									controllers.ClimateServiceController.tutorial()
