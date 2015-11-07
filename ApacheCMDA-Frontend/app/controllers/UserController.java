@@ -67,6 +67,7 @@ public class UserController extends Controller {
 		JsonNode response = User.auth(jsonData);
 		Application.flashMsg(response);
 
-    	return ok(login.render("test"));
-    }
+		return ok(userprofile.render(email));
+	}
+    	//return ok(login.render("test"));    }
 }
