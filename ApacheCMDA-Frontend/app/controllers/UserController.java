@@ -25,14 +25,22 @@ import play.mvc.*;
 import play.libs.Json;
 import views.html.*;
 import play.data.DynamicForm;
+import play.data.Form;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserController extends Controller {
+	final static Form<User> userForm = Form
+			.form(User.class);
 
     public static Result registerPage() {
     	return ok(registerus.render("test"));
     }
     public static Result loginPage() {
     	return ok(login.render("test"));
+    }
+
+    public static Result userProfile(){
+    	return ok(userProfile.render(User.getUser(),userForm));
     }
 
     public static Result registerUser(){
@@ -51,7 +59,7 @@ public class UserController extends Controller {
 		JsonNode response = User.create(jsonData);
 		Application.flashMsg(response);
 	
-	System.out.println(response.toString());
+		System.out.println(response.toString());
 
 	    return ok(registerus.render("test"));
     }
@@ -67,7 +75,7 @@ public class UserController extends Controller {
 		JsonNode response = User.auth(jsonData);
 		Application.flashMsg(response);
 
-		return ok(userprofile.render(email));
-	}
-    	//return ok(login.render("test"));    }
+		
+    	return ok(login.render("test"));    
+    }
 }

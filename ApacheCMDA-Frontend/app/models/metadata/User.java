@@ -28,10 +28,26 @@ public class User {
 	private String email;
 	private String firstName;
 	private String lastName;
+	private String id;
 
 	private static final String ADD_USER_CALL = Constants.NEW_BACKEND+"users/add";
 	private static final String AUTH_USER_CALL = Constants.NEW_BACKEND+"users/isUserValid";
+	private static final String GET_USER_CALL = Constants.NEW_BACKEND+"users/102";
+	
+	/**
+	*
+	*/
+	public static User  getUser(){
+		List<User> userList = new ArrayList<User>();
 
+		JsnNode userJson =  APICall.callAPI(GET_USER_CALL);
+		User newUser = new User();
+		newUser.firstName = userJson.path("firstName").asText();
+		newUser.lastName = userJson.path("lastName").asText();
+		newUser.email = userJson.path("email").asText();
+		userList.add(newUser)；
+		return newUser;
+	}
 	/**
 	 * Create a new user
 	 *
@@ -52,5 +68,20 @@ public class User {
 		return APICall.postAPI(AUTH_USER_CALL, jsonData);
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
 }
 
