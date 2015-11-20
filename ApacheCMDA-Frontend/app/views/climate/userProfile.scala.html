@@ -19,6 +19,31 @@
 @import helper._ 
 
 @main("User Profile") {
-	<h1>@user.getUserName()</h1>
-	<p>@user.toString()</p>
+	<h1>User Profile</h1>
+	<h3>User ID</h3>
+	<p>@user.getId()</p>
+	<h3>User Name</h3>
+	<p>@user.getUserName()</p>
+	<h3>Name</h3>
+	<p>@user.getFirstName() @user.getLastName()</p>
+	<h3>Middle Initial</h3>
+	<p>@user.getMiddleInitial</p>
+	<h3>Affiliation</h3>
+	<p>@user.getAffiliation</p>
+	<h3>Title</h3>
+	<p>@user.getTitle()</p>
+	<h3>Email</h3>
+	<p>@user.getEmail()</p>
+	<h3>Mailing Address</h3>
+	<p>@user.getMailingAddress</p>
+	<h3>Phone Number</h3>
+	<p>@user.getPhoneNumber</p>
+	<h3>Fax Number</h3>
+	<p>@user.getFaxNumber</p>
+	<h3>Research Fields</h3>
+	<p>@user.getResearchFields</p>
+	<h3>Highest Degree</h3>
+	<p>@user.getHighestDegree</p>
+	
+	
 }

@@ -1,33 +1,21 @@
-2015-11-20 00:40:32,991 - [INFO] - from play in pool-4-thread-4 
+2015-11-20 02:19:39,762 - [INFO] - from play in pool-4-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-11-20 00:40:58,732 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 02:19:58,767 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-20 00:40:58,969 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 02:19:58,969 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:file:data/db
 
-2015-11-20 00:40:59,749 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 02:19:59,871 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-11-20 00:44:37,526 - [INFO] - from play in play-internal-execution-context-2 
-datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
+2015-11-20 02:20:00,550 - [INFO] - from application in play-akka.actor.default-dispatcher-7 
+http://localhost:9034/users/1
 
-2015-11-20 00:44:37,534 - [INFO] - from play in play-internal-execution-context-2 
-database [default] connected at jdbc:h2:file:data/db
+2015-11-20 02:20:00,550 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+http://localhost:9034/users/103
 
-2015-11-20 00:44:37,675 - [INFO] - from play in play-internal-execution-context-2 
-Application started (Dev)
-
-2015-11-20 00:47:52,975 - [INFO] - from play in play-internal-execution-context-2 
-datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
-
-2015-11-20 00:47:52,979 - [INFO] - from play in play-internal-execution-context-2 
-database [default] connected at jdbc:h2:file:data/db
-
-2015-11-20 00:47:53,093 - [INFO] - from play in play-internal-execution-context-2 
-Application started (Dev)
-
-2015-11-20 00:48:08,580 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+2015-11-20 02:20:18,876 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
 http://localhost:9034/users/114
 
