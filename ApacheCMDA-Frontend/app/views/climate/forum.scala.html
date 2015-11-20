@@ -13,13 +13,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    *
  * See the License for the specific language governing permissions and         *
  * limitations under the License.                                              *
- *******************************************************************************@ 
+ *******************************************************************************@
 @(workflows: List[metadata.Workflow], page: Int, numPage: Int)
 
-@import helper._ 
+@import helper._
 
 @main("Workflow") {
-<!-- 	
+<!--
 	<div class="container" style="margin-top: 35px">
     <div class="page-header page-heading">
         <h1 class="pull-left">Workflow platform</h1>
@@ -47,8 +47,8 @@
 					<li><a href="?page=@i">@i</a></li>
 				}
 			}
-			
-			
+
+
             <li>
             	@if(page!=numPage && numPage!=0) {
                 <a href="?page=@(page+1)" aria-label="Next">
@@ -56,7 +56,7 @@
                 </a>
                 }
             </li>
-            
+
         </ul>
     </nav>
 	<a href="workflow/new/workflow" class="btn btn-info" role="button">New Workflow</a>
@@ -80,12 +80,12 @@
                 <td>
                     <h4><a href="/workflow/@oneWorkflow.getId()">@oneWorkflow.getName() </a><br><small>@oneWorkflow.getPurpose()</small></h4>
                 </td>
-                <td class="text-center hidden-xs hidden-sm"><a href="#">@oneWorkflow.getAuthor()</a></td>
+                <td class="text-center hidden-xs hidden-sm"><a href="/userProfile/@oneWorkflow.getAuthorId()">@oneWorkflow.getAuthor()</a></td>
                 <td class="text-center hidden-xs hidden-sm">@oneWorkflow.getCreateTime()</td>
                 <td class="text-center hidden-xs hidden-sm">@oneWorkflow.getVersionNo()</td>
             </tr>
 			}
-            
+
         </tbody>
     </table>
 </div>
