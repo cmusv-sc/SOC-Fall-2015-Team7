@@ -45,9 +45,12 @@
 	<h3>Highest Degree</h3>
 	<p>@user.getHighestDegree</p>
 	<h3>Contributed Workflows</h3>
-	<p>
+	<p>@if(workflows.size()==0) {
+	<div>None for now.</div>
+	} else {
 		@for(workflow <- workflows){
 		<div>@workflow.getName() , created on @workflow.getCreateTime()</div>
+		}
 		}
 	</p>
 	
