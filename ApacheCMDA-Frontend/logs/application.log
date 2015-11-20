@@ -2130,3 +2130,87 @@ http://localhost:9034/users/3
 2015-11-20 17:39:29,849 - [INFO] - from application in play-akka.actor.default-dispatcher-196 
 http://localhost:9034/workflow/getWorkflowsOfUser/3
 
+2015-11-20 17:41:18,437 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+http://localhost:9034/users/1
+
+2015-11-20 17:41:18,445 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+http://localhost:9034/workflow/getWorkflowsOfUser/1
+
+2015-11-20 17:41:18,565 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/users/1
+
+2015-11-20 17:41:18,574 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/workflow/getWorkflowsOfUser/1
+
+2015-11-20 17:41:21,408 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+http://localhost:9034/users/2
+
+2015-11-20 17:41:21,424 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+http://localhost:9034/workflow/getWorkflowsOfUser/2
+
+2015-11-20 17:41:21,528 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+http://localhost:9034/users/2
+
+2015-11-20 17:41:21,536 - [INFO] - from application in play-akka.actor.default-dispatcher-199 
+http://localhost:9034/workflow/getWorkflowsOfUser/2
+
+2015-11-20 17:41:24,882 - [INFO] - from application in play-akka.actor.default-dispatcher-203 
+http://localhost:9034/users/1
+
+2015-11-20 17:41:24,894 - [INFO] - from application in play-akka.actor.default-dispatcher-203 
+http://localhost:9034/workflow/getWorkflowsOfUser/1
+
+2015-11-20 17:41:25,034 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+http://localhost:9034/users/3
+
+2015-11-20 17:41:25,040 - [INFO] - from application in play-akka.actor.default-dispatcher-209 
+http://localhost:9034/workflow/getWorkflowsOfUser/3
+
+2015-11-20 17:41:25,103 - [INFO] - from application in play-akka.actor.default-dispatcher-208 
+http://localhost:9034/users/3
+
+2015-11-20 17:41:25,115 - [INFO] - from application in play-akka.actor.default-dispatcher-208 
+http://localhost:9034/workflow/getWorkflowsOfUser/3
+
+2015-11-20 17:41:28,457 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/users/1
+
+2015-11-20 17:41:28,463 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/workflow/getWorkflowsOfUser/1
+
+2015-11-20 17:41:28,568 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/users/5
+
+2015-11-20 17:41:28,575 - [INFO] - from application in play-akka.actor.default-dispatcher-204 
+http://localhost:9034/workflow/getWorkflowsOfUser/5
+
+2015-11-20 17:42:19,020 - [INFO] - from play in play-internal-execution-context-17 
+datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
+
+2015-11-20 17:42:19,023 - [INFO] - from play in play-internal-execution-context-17 
+database [default] connected at jdbc:h2:file:data/db
+
+2015-11-20 17:42:19,108 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2015-11-20 17:42:19,116 - [INFO] - from application in play-akka.actor.default-dispatcher-205 
+http://localhost:9034/users/5
+
+2015-11-20 17:42:19,124 - [INFO] - from application in play-akka.actor.default-dispatcher-205 
+http://localhost:9034/workflow/getWorkflowsOfUser/5
+
+2015-11-20 17:42:24,529 - [INFO] - from play in play-internal-execution-context-17 
+datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
+
+2015-11-20 17:42:24,532 - [INFO] - from play in play-internal-execution-context-17 
+database [default] connected at jdbc:h2:file:data/db
+
+2015-11-20 17:42:24,579 - [INFO] - from play in play-internal-execution-context-17 
+Application started (Dev)
+
+2015-11-20 17:42:24,588 - [INFO] - from application in play-akka.actor.default-dispatcher-211 
+http://localhost:9034/users/5
+
+2015-11-20 17:42:24,597 - [INFO] - from application in play-akka.actor.default-dispatcher-211 
+http://localhost:9034/workflow/getWorkflowsOfUser/5
+
