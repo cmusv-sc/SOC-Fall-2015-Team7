@@ -33,7 +33,7 @@ public class WorkflowController extends Controller{
 	private final WorkflowRepository workflowRepository;
 	private final ClimateServiceRepository climateServiceRepository;
 	private final UserRepository userRepository;
-	
+
 	// We are using constructor injection to receive a repository to support our
 	// desire for immutability.
 	@Inject
@@ -43,7 +43,7 @@ public class WorkflowController extends Controller{
 		this.climateServiceRepository = climateServiceRepository;
 		this.userRepository = userRepository;
 	}
-	
+
 	public Result getAllWorkflows(String format) {
 		Iterable<Workflow> workflowIterable = workflowRepository.findAll();
 		List<Workflow> workflowList = new ArrayList<Workflow>();
@@ -56,25 +56,25 @@ public class WorkflowController extends Controller{
 		}
 		return ok(result);
 	}
-	
+
 	public Result getPageWorkflows(String format, int page, int size) {
 
 		int pageStartFrom1 = page-1;
 		Page<Workflow> workflowPage = workflowRepository.findAll(new PageRequest(pageStartFrom1, size));
-		
+
 		List<Workflow> workflowList = workflowPage.getContent();
 
 		String workflows = null;
 		if (format.equals("json")) {
 			workflows = new Gson().toJson(workflowList);
 		}
-		
+
 		return ok(workflows);
 	}
-	
+
 	public Result getOneWorkflow(String format, long id) {
 		List<Workflow> result = workflowRepository.findById(id);
-		
+
 		String workflow = null;
 		if (format.equals("json")) {
 			workflow = new Gson().toJson(result.get(0));
@@ -82,13 +82,13 @@ public class WorkflowController extends Controller{
 
 		return ok(workflow);
 	}
-	
+
 	public Result getNumEntry() {
 		JsonObject rtn = new JsonObject();
 		rtn.addProperty("numEntry", workflowRepository.count());
 		return ok(rtn.toString());
 	}
-	
+
 	public Result addWorkflow() {
 		JsonNode json = request().body().asJson();
 		if (json == null) {
@@ -116,25 +116,25 @@ public class WorkflowController extends Controller{
 
 	    List<String> userIdList = Arrays.asList(userIdSet.split("\\s*,\\s*"));
 	    List<String> climateServiceIdList = Arrays.asList(climateServiceIdSet.split("\\s*,\\s*"));
-	    
+
 	    List<User> userSetList = new ArrayList<User>();
 	    List<ClimateService> climateServiceSetList = new ArrayList<ClimateService>();
-	    
+
 	    for (String userId : userIdList) {
 	    	userSetList.add(userRepository.findOne(Long.parseLong(userId)));
 	    }
 	    for (String climateServiceId : climateServiceIdList) {
 	    	climateServiceSetList.add(climateServiceRepository.findOne(Long.parseLong(climateServiceId)));
 	    }
-	    
+
 		try {
 			if (workflowRepository.findByName(name).size()>0) {
 				System.out.println("Workflow exist in database " + name);
 				return badRequest("Workflow exist in database");
 			}
-			
+
 			Workflow workflow = new Workflow(author, authorId, name, purpose, input, output, image, contributors, linksInstructions, createTime,
-					versionNo, dataset, otherWorkflows, userSetList, climateServiceSetList) ;	
+					versionNo, dataset, otherWorkflows, userSetList, climateServiceSetList) ;
 			workflowRepository.save(workflow);
 			System.out.println("Workflow saved: " + workflow.getId());
 			return created(new Gson().toJson(workflow.getId()));
@@ -144,7 +144,7 @@ public class WorkflowController extends Controller{
 			return badRequest("Workflow not saved: " + name);
 		}
 	}
-	
+
 	public Result deleteWorkflowById(long id) {
 		Workflow workflow = workflowRepository.findOne(id);
 		if (workflow == null) {
