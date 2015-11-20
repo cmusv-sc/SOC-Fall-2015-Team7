@@ -4,7 +4,7 @@
 		module="apachecmda-frontend-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20151103155834"
+		publication="20151120101958"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

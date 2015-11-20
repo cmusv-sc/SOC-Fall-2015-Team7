@@ -1,12 +1,16 @@
 package models.metadata;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.codec.binary.Base64;
+
 import com.fasterxml.jackson.databind.JsonNode;
+import com.google.gson.Gson;
 
 import util.APICall;
 import util.Constants;
@@ -20,12 +24,104 @@ public class Workflow {
 	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
 	private String id;
-	private String workflowName;
+	private String name;
 	private String purpose;
+	private String author;
+	private int authorId;
+	private String input;
+	private String output;
+	private byte[] image;
+	private String contributors;
+	private String linksInstructions;
 	private String createTime;
 	private String versionNo;
-	private long rootWorkflowId;
+	private List<String> datasetList;
+	private List<String> otherWorkflowsList;
+	private List<String> climateServiceSetList;
+
+	public List<String> getClimateServiceSetList() {
+		return climateServiceSetList;
+	}
+
+	public void setClimateServiceSetList(List<String> climateServiceSetStr) {
+		this.climateServiceSetList = new ArrayList<String>();
+		this.climateServiceSetList.addAll(climateServiceSetStr);
+	}
 	
+	public List<String> getDatasetList() {
+		return datasetList;
+	}
+
+	public void setDatasetList(List<String> datasetList) {
+		this.datasetList = new ArrayList<String>();
+		this.datasetList.addAll(datasetList);
+	}
+
+	public List<String> getOtherWorkflowsList() {
+		return otherWorkflowsList;
+	}
+
+	public void setOtherWorkflowsList(List<String> otherWorkflowsList) {
+		this.otherWorkflowsList = new ArrayList<String>();
+		this.otherWorkflowsList.addAll(otherWorkflowsList);
+	}
+
+	public String getInput() {
+		return input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+	}
+
+	public String getOutput() {
+		return output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	public String getContributors() {
+		return contributors;
+	}
+
+	public void setContributors(String contributors) {
+		this.contributors = contributors;
+	}
+
+	public String getLinksInstructions() {
+		return linksInstructions;
+	}
+
+	public void setLinksInstructions(String linksInstructions) {
+		this.linksInstructions = linksInstructions;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -34,12 +130,12 @@ public class Workflow {
 		this.id = id;
 	}
 
-	public String getWorkflowName() {
-		return workflowName;
+	public String getName() {
+		return name;
 	}
 
-	public void setWorkflowName(String workflowName) {
-		this.workflowName = workflowName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPurpose() {
@@ -66,14 +162,6 @@ public class Workflow {
 		this.versionNo = versionNo;
 	}
 
-	public long getRootWorkflowId() {
-		return rootWorkflowId;
-	}
-
-	public void setRootWorkflowId(long rootWorkflowId) {
-		this.rootWorkflowId = rootWorkflowId;
-	}
-
 	public static List<Workflow> all() {
 		List<Workflow> workflows = new ArrayList<Workflow>();
 
@@ -88,12 +176,11 @@ public class Workflow {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
 			newWorkflow.setId(json.path("id").asText());
-			newWorkflow.setWorkflowName(json.get(
-					"name").asText());
+			newWorkflow.setName(json.get("name").asText());
 			newWorkflow.setPurpose(json.path("purpose").asText());
+			
 			newWorkflow.setCreateTime(json.path("createTime").asText());
 			newWorkflow.setVersionNo(json.path("versionNo").asText());
-			newWorkflow.setRootWorkflowId(json.path("rootWorkflowId").asLong());
 			workflows.add(newWorkflow);
 		}
 		
@@ -113,12 +200,12 @@ public class Workflow {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
 			newWorkflow.setId(json.path("id").asText());
-			newWorkflow.setWorkflowName(json.get(
-					"name").asText());
+			newWorkflow.setName(json.get("name").asText());
 			newWorkflow.setPurpose(json.path("purpose").asText());
+			newWorkflow.setAuthor(json.path("author").asText());
+			newWorkflow.setAuthorId(json.path("authorId").asInt());
 			newWorkflow.setCreateTime(json.path("createTime").asText());
 			newWorkflow.setVersionNo(json.path("versionNo").asText());
-			newWorkflow.setRootWorkflowId(json.path("rootWorkflowId").asLong());
 			workflows.add(newWorkflow);
 		}
 		return workflows;
@@ -131,16 +218,44 @@ public class Workflow {
 				|| json.isArray()) {
 			return null;
 		}
-		
-		Workflow newWorkflow = new Workflow();
-		newWorkflow.setId(json.path("id").asText());
-		newWorkflow.setWorkflowName(json.get("name").asText());
-		newWorkflow.setPurpose(json.path("purpose").asText());
-		newWorkflow.setCreateTime(json.path("createTime").asText());
-		newWorkflow.setVersionNo(json.path("versionNo").asText());
-		newWorkflow.setRootWorkflowId(json.path("rootWorkflowId").asLong());
-		
-		return newWorkflow;
+//		Workflow newWorkflow = new Workflow();
+//		newWorkflow.setId(json.path("id").asText());
+//		newWorkflow.setName(json.get("name").asText());
+//		newWorkflow.setPurpose(json.path("purpose").asText());
+//		newWorkflow.setInput(json.get("input").asText());
+//		newWorkflow.setOutput(json.get("output").asText());
+//		newWorkflow.setContributors(json.get("contributors").asText());
+//		newWorkflow.setLinksInstructions(json.get("linksInstructions").asText());
+//		newWorkflow.setCreateTime(json.path("createTime").asText());
+//		newWorkflow.setVersionNo(json.path("versionNo").asText());
+		Workflow newWorkflow = null;
+		try {
+			newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
+			
+			List<String> list = new ArrayList<String>();
+			for (int i= 0; i < json.path("climateServiceSet").size();i++)
+				list.add(json.path("climateServiceSet").get(i).path("name").asText());
+			newWorkflow.setClimateServiceSetList(list);
+
+			String datasets = json.path("dataset").asText();
+			list = new ArrayList<String>();
+			for (String set : datasets.split(";"))
+				list.add(set);
+			newWorkflow.setDatasetList(list);
+			
+			String otherWorkflows = json.path("otherWorkflows").asText();
+			list = new ArrayList<String>();
+			for (String workflow:otherWorkflows.split(";"))
+				list.add(workflow);
+			newWorkflow.setOtherWorkflowsList(list);
+			
+			OutputStream out = new BufferedOutputStream(new FileOutputStream("public/tmp.png"));
+			out.write(newWorkflow.getImage());
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return newWorkflow; // newWorkflow
 	}
 	
 	public static JsonNode create(JsonNode jsonData) {
@@ -152,4 +267,5 @@ public class Workflow {
 		int numPage = (int) Math.ceil((double)node.path("numEntry").asLong() / PAGESIZE);
 		return numPage;
 	}
+	
 }
