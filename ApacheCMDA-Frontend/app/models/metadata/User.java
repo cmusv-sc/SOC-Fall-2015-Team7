@@ -20,24 +20,27 @@ package models.metadata;
 import com.fasterxml.jackson.databind.JsonNode;
 import util.APICall;
 import util.Constants;
+import java.util.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 public class User {
 
 	private long id;
 
 	private static final String GET_ONE_USER_CALL_TO_BACKEND = Constants.NEW_BACKEND+"users/";
+	private static final String GET_ALL_WORKFLOWS_OF_A_USER_FROM_BACKEND = Constants.NEW_BACKEND+"workflow/getWorkflowsOfUser/";
 
 	public static User one(Long id) {
 		JsonNode json;
 		// Long id = Long.parseLong(idStr);
 		json = APICall.callAPI(GET_ONE_USER_CALL_TO_BACKEND+String.valueOf(id));
-
 		if (json == null || json.has("error")
 				|| json.isArray()) {
-			// return null;
-			User newUser = new User();
-			newUser.setFirstName(String.valueOf(id));
-			return newUser;
+			return null;
+			// User newUser = new User();
+			// newUser.setFirstName(String.valueOf(id));
+			// return newUser;
 		}
 		
 		User newUser = new User();
@@ -56,6 +59,40 @@ public class User {
 		return newUser;
 		// User obj = new Gson.fromJson(json.toString(), User.class);
 		// return obj;
+	}
+
+	//TODO: update to return List<Workflow>
+	public static List<Workflow> getUserWorkflows(Long id) {
+		// JsonNode ids;
+		// ids = APICall.callAPI(GET_ALL_WORKFLOWS_OF_A_USER_FROM_BACKEND + String.valueOf(id));
+		// if (ids == null || ids.has("error") || ids.isArray()) {
+		// 	return "None";
+		// }
+		// return ids.toString();
+		JsonNode workflowList;
+		List<Workflow> resultList = new ArrayList<Workflow>();
+		workflowList = APICall.callAPI(GET_ALL_WORKFLOWS_OF_A_USER_FROM_BACKEND + String.valueOf(id));
+		if (workflowList == null || workflowList.has("error")) {
+			return resultList;
+		}
+
+		for (int i = 0; i < workflowList.size(); i++) {
+			JsonNode json = workflowList.path(i);
+			Workflow newWorkflow = new Workflow();
+			newWorkflow.setName(json.path("name").asText());
+			newWorkflow.setCreateTime(json.path("createTime").asText());
+			// newService.setId(json.path("id").asText());
+			// newService.setClimateServiceName(json.get(
+			// 		"name").asText());
+			// newService.setPurpose(json.path("purpose").asText());
+			// newService.setUrl(json.path("url").asText());
+			// //newService.setCreateTime(json.path("createTime").asText());
+			// newService.setScenario(json.path("scenario").asText());
+			// newService.setVersion(json.path("versionNo").asText());
+			// newService.setRootservice(json.path("rootServiceId").asText());
+			resultList.add(newWorkflow);
+		}
+		return resultList;
 	}
 
 	private String userName;

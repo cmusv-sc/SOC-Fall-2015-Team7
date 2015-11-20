@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and         *
  * limitations under the License.                                              *
  *******************************************************************************@ 
-@(user: metadata.User)
+@(user: metadata.User, workflows: List[metadata.Workflow])
 
 @import helper._ 
 
@@ -44,6 +44,12 @@
 	<p>@user.getResearchFields</p>
 	<h3>Highest Degree</h3>
 	<p>@user.getHighestDegree</p>
+	<h3>Contributed Workflows</h3>
+	<p>
+		@for(workflow <- workflows){
+		<div>@workflow.getName() , created on @workflow.getCreateTime()</div>
+		}
+	</p>
 	
 	
 }
