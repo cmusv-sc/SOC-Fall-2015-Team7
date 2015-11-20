@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,30 +35,51 @@ public class Workflow {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	private String author;
+	private int authorId;
 	private String name;
 	private String purpose;
+	private String input;
+	private String output;
+	@Column(columnDefinition="MEDIUMBLOB")
+	private byte[] image;
+	private String contributors;
+	private String linksInstructions;
 	private Date createTime;
 	private String versionNo;
-	private long rootWorkflowId;
+	private String dataset;
+	private String otherWorkflows;
+
+	//	private long rootWorkflowId;
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
 	@JoinTable(name = "WorkflowAndUser", joinColumns = { @JoinColumn(name ="workflowId", referencedColumnName = "id")}, inverseJoinColumns = { @JoinColumn(name = "userId", referencedColumnName = "id") })
 	private List<User> userSet;
+	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
 	@JoinTable(name = "WorkflowAndClimateService", joinColumns = { @JoinColumn(name ="workflowId", referencedColumnName = "id")}, inverseJoinColumns = { @JoinColumn(name = "climateServiceId", referencedColumnName = "id") })
 	private List<ClimateService> climateServiceSet;
-
+	
 	public Workflow() {
 	}
-
-	public Workflow(String name, String purpose, Date createTime,
-			String versionNo, long rootWorkflowId, List<User> userSet,
+	
+	public Workflow(String author, int authorId, String name, String purpose, String input, String output, byte[] image, String contributors, String linksInstructions, Date createTime,
+			String versionNo, String dataset, String otherWorkflows, List<User> userSet,
 			List<ClimateService> climateServiceSet) {
 		super();
+		this.author = author;
+		this.authorId = authorId;
 		this.name = name;
 		this.purpose = purpose;
+		this.input = input;
+		this.output = output;
+		this.image = image;
+		this.contributors = contributors;
+		this.linksInstructions = linksInstructions;
 		this.createTime = createTime;
 		this.versionNo = versionNo;
-		this.rootWorkflowId = rootWorkflowId;
+//		this.rootWorkflowId = rootWorkflowId;
+		this.dataset = dataset;
+		this.otherWorkflows = otherWorkflows;
 		this.userSet = userSet;
 		this.climateServiceSet = climateServiceSet;
 	}
@@ -85,6 +107,14 @@ public class Workflow {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
+	
+	public String getDataset() {
+		return dataset;
+	}
+
+	public void setDataset(String dataset) {
+		this.dataset = dataset;
+	}
 
 	public String getVersionNo() {
 		return versionNo;
@@ -93,13 +123,68 @@ public class Workflow {
 	public void setVersionNo(String versionNo) {
 		this.versionNo = versionNo;
 	}
-
-	public long getRootWorkflowId() {
-		return rootWorkflowId;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setRootWorkflowId(long rootWorkflowId) {
-		this.rootWorkflowId = rootWorkflowId;
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
+	}
+
+//	public long getRootWorkflowId() {
+//		return rootWorkflowId;
+//	}
+//
+//	public void setRootWorkflowId(long rootWorkflowId) {
+//		this.rootWorkflowId = rootWorkflowId;
+//	}
+
+	public String getInput() {
+		return input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+	}
+
+	public String getOutput() {
+		return output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	public String getContributors() {
+		return contributors;
+	}
+
+	public void setContributors(String contributors) {
+		this.contributors = contributors;
+	}
+
+	public String getLinksInstructions() {
+		return linksInstructions;
+	}
+
+	public void setLinksInstructions(String linksInstructions) {
+		this.linksInstructions = linksInstructions;
 	}
 
 	public List<User> getUserSet() {
@@ -117,6 +202,14 @@ public class Workflow {
 	public void setClimateServiceSet(List<ClimateService> climateServiceSet) {
 		this.climateServiceSet = climateServiceSet;
 	}
+	
+	public String getOtherWorkflows() {
+		return otherWorkflows;
+	}
+
+	public void setOtherWorkflows(String otherWorkflows) {
+		this.otherWorkflows = otherWorkflows;
+	}
 
 	public long getId() {
 		return id;
@@ -126,7 +219,7 @@ public class Workflow {
 	public String toString() {
 		return "Workflow [id=" + id + ", name=" + name + ", purpose=" + purpose
 				+ ", createTime=" + createTime + ", versionNo=" + versionNo
-				+ ", rootWorkflowId=" + rootWorkflowId + ", userSet=" + userSet
+				+ ", userSet=" + userSet //+ ", rootWorkflowId=" + rootWorkflowId 
 				+ ", climateServiceSet=" + climateServiceSet + "]";
 	}
 	

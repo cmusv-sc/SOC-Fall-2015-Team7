@@ -34,7 +34,7 @@
     <nav class="text-center">
         <ul class="pagination">
             <li>
-            	@if(page!=1) {
+            	@if(page!=1 && numPage!=0) {
                 <a href="?page=@(page-1)" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
@@ -50,7 +50,7 @@
 			
 			
             <li>
-            	@if(page!=numPage) {
+            	@if(page!=numPage && numPage!=0) {
                 <a href="?page=@(page+1)" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
@@ -59,7 +59,7 @@
             
         </ul>
     </nav>
-
+	<a href="workflow/new/workflow" class="btn btn-info" role="button">New Workflow</a>
     <table class="table forum table-striped">
         <thead>
             <tr>
@@ -78,11 +78,11 @@
             <tr>
                 <td class="text-center"><i class="text-primary">tag</i></td>
                 <td>
-                    <h4><a href="/workflow/@oneWorkflow.getId()">@oneWorkflow.getWorkflowName() </a><br><small>@oneWorkflow.getPurpose()</small></h4>
+                    <h4><a href="/workflow/@oneWorkflow.getId()">@oneWorkflow.getName() </a><br><small>@oneWorkflow.getPurpose()</small></h4>
                 </td>
-                <td class="text-center hidden-xs hidden-sm"><a href="#">zhongchx</a></td>
-                <td class="text-center hidden-xs hidden-sm"><a href="#">@oneWorkflow.getCreateTime()</a></td>
-                <td class="text-center hidden-xs hidden-sm"><a href="#">@oneWorkflow.getVersionNo()</a></td>
+                <td class="text-center hidden-xs hidden-sm"><a href="#">@oneWorkflow.getAuthor()</a></td>
+                <td class="text-center hidden-xs hidden-sm">@oneWorkflow.getCreateTime()</td>
+                <td class="text-center hidden-xs hidden-sm">@oneWorkflow.getVersionNo()</td>
             </tr>
 			}
             

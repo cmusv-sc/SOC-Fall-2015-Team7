@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 2015-11-20 02:19:45,261 - [INFO] - from play in pool-4-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9034
 
 2015-11-20 02:20:07,029 - [INFO] - from play in play-internal-execution-context-1 
+=======
+2015-11-20 10:19:50,950 - [INFO] - from play in pool-4-thread-1 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9034
+
+2015-11-20 10:21:14,947 - [INFO] - from play in play-internal-execution-context-1 
+>>>>>>> master
 Application started (Dev)
 

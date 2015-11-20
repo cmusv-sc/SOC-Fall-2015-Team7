@@ -12,8 +12,6 @@ import javax.persistence.PersistenceException;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -26,6 +24,7 @@ import models.Workflow;
 import models.WorkflowRepository;
 import play.mvc.Controller;
 import play.mvc.Result;
+import org.apache.commons.codec.binary.Base64;
 
 @Named
 @Singleton
@@ -80,7 +79,7 @@ public class WorkflowController extends Controller{
 		if (format.equals("json")) {
 			workflow = new Gson().toJson(result.get(0));
 		}
-		
+
 		return ok(workflow);
 	}
 	
@@ -98,11 +97,20 @@ public class WorkflowController extends Controller{
 		}
 
 		// Parse JSON file
+		String author = json.path("author").asText();
+		int authorId = json.path("authorId").asInt();
 		String name = json.path("name").asText();
 		String purpose = json.path("purpose").asText();
 		Date createTime = new Date();
+		String imageStr = json.path("image").asText();
+		byte[] image = Base64.decodeBase64(imageStr);
+		String input = json.path("input").asText();
+		String output = json.path("output").asText();
+		String contributors = json.path("contributors").asText();
+		String linksInstructions = json.path("linksInstructions").asText();
 		String versionNo = json.path("versionNo").asText();
-		long rootWorkflowId = json.path("rootWorkflowId").asLong();
+		String dataset = json.path("dataset").asText();
+		String otherWorkflows = json.path("otherWorkflows").asText();
 	    String userIdSet = json.path("userSet").asText();
 	    String climateServiceIdSet = json.path("climateServiceSet").asText();
 
@@ -125,8 +133,8 @@ public class WorkflowController extends Controller{
 				return badRequest("Workflow exist in database");
 			}
 			
-			Workflow workflow = new Workflow(name, purpose, createTime,
-					versionNo, rootWorkflowId, userSetList, climateServiceSetList) ;	
+			Workflow workflow = new Workflow(author, authorId, name, purpose, input, output, image, contributors, linksInstructions, createTime,
+					versionNo, dataset, otherWorkflows, userSetList, climateServiceSetList) ;	
 			workflowRepository.save(workflow);
 			System.out.println("Workflow saved: " + workflow.getId());
 			return created(new Gson().toJson(workflow.getId()));

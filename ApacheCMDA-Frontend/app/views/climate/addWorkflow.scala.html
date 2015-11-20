@@ -26,15 +26,51 @@
 	@flash_message()    
      @if(true){
 	    <h1>Add a new workflow</h1>
-	    @form(routes.WorkflowController.newWorkflow()) {   
+	    @form(action = routes.WorkflowController.newWorkflow(),'enctype -> "multipart/form-data") {   
 	        @inputText(
 	        	workflowForm("Name"),
-	        	'_label -> "Name * (Please DO NOT contain spaces)"
+	        	'_label -> "Name"
 	        )
 	        @inputText(
 	        	workflowForm("Purpose"),
 	        	'_label -> "Purpose"
 	        )
+	        
+	        @inputFile(
+    	        workflowForm("Image"),
+	        	'_label -> "Image, must submit a image with png format"
+	        )
+	        
+	        @inputText(
+	        	workflowForm("Input"),
+	        	'_label -> "Input"
+	        )
+	        
+	        @inputText(
+	        	workflowForm("Output"),
+	        	'_label -> "Output"
+	        )
+	        
+        	@inputText(
+	        	workflowForm("Contributors"),
+	        	'_label -> "Contributors"
+	        )
+	        
+	        @inputText(
+	        	workflowForm("Links_and_Instructions"),
+	        	'_label -> "Links_and_Instructions,seperated by \";\""
+	        )
+	        
+	        @inputText(
+	        	workflowForm("Dataset"),
+	        	'_label -> "Associated datasets"
+	        )
+	        
+     	    @inputText(
+	        	workflowForm("OtherWorkflows"),
+	        	'_label -> "Other workflows that attribute this workflow,seperated by \";\""
+	        )
+	        
 	        @inputText(
 	        	workflowForm("User_Set"),
 	        	'_label -> "User_Set(Using userId, comma seperate. e.g. 5,10)"
@@ -47,10 +83,6 @@
 	        	workflowForm("Version"),
 	        	'_label -> "Version"
 	        ) 
-	        @inputText(
-	        	workflowForm("Root_Service"),
-	        	'_label -> "Root_Service"
-	        )
 	        
 	        <input class="btn" type="submit" value="Add a new workflow">
 	        <a href="@routes.WorkflowController.home()" class="btn">Cancel</a>
