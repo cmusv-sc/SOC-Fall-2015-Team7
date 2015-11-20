@@ -5,7 +5,13 @@
 # Home page
 GET         /home                                                controllers.ClimateServiceController.home(email ?= null, vfile ?= null, dataset ?= null)
 GET 		/													 controllers.ClimateServiceController.home(email ?= null, vfile ?= null, dataset ?= null)
-
+GET		/login						controllers.Application.login()
+GET		/logout						controllers.Application.logout()
+GET		/authenticate				controllers.Application.authenticate()
+GET		/signup						controllers.Application.signup()
+GET		/createNewUser				controllers.Application.createNewUser()
+GET		/createSuccess				controllers.Application.createSuccess()
+POST	/isEmailExisted				controllers.Application.isEmailExisted()
 
 # BugReporting
 GET         /bugs                                                controllers.BugReportController.reports()
@@ -45,11 +51,3 @@ GET 		/climate/getSearchResult				 			controllers.DatasetController.getSearchRes
 #Map static resources from the /public folder to the /assets URL path
 GET     	/assets/*file               						controllers.Assets.at(path="/public", file)
 
-
-
-# About user and registeration
-GET     	/register               						controllers.UserController.registerPage()
-POST     	/register               						controllers.UserController.registerUser()
-GET     	/login									controllers.UserController.loginPage()
-POST     	/login									controllers.UserController.loginUser()
-GET     	/userprofile              						controllers.UserController.userProfile()
