@@ -191,7 +191,10 @@ public class UserController extends Controller {
 		User user = userRepository.findByEmail(email);
 		if (user.getPassword().equals(password)) {
 			System.out.println("User is valid");
-			return ok("User is valid");
+			String result = new String();
+			result = new Gson().toJson(user);
+			System.out.println("*************"+result);
+			return ok(result);
 		} else {
 			System.out.println("User is not valid");
 			return badRequest("User is not valid");

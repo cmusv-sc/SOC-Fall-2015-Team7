@@ -1,27 +1,33 @@
-2015-11-19 21:32:42,756 - [INFO] - from play in pool-4-thread-3 
+2015-11-20 00:40:32,991 - [INFO] - from play in pool-4-thread-4 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-11-19 21:32:59,976 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 00:40:58,732 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-19 21:33:00,179 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 00:40:58,969 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:file:data/db
 
-2015-11-19 21:33:00,906 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-20 00:40:59,749 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-11-19 21:36:11,973 - [INFO] - from application in play-akka.actor.default-dispatcher-28 
-http://localhost:9034/workflow/getNumEntry
+2015-11-20 00:44:37,526 - [INFO] - from play in play-internal-execution-context-2 
+datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-19 21:36:13,829 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
-http://localhost:9034/climateService/getAllClimateServices/json
+2015-11-20 00:44:37,534 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:h2:file:data/db
 
-2015-11-19 21:36:15,568 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
-http://localhost:9034/dataset/getAllDatasets/json
+2015-11-20 00:44:37,675 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
 
-2015-11-19 21:36:45,933 - [INFO] - from application in play-akka.actor.default-dispatcher-32 
-http://localhost:9034/climateService/getAllClimateServices/json
+2015-11-20 00:47:52,975 - [INFO] - from play in play-internal-execution-context-2 
+datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-19 21:36:47,266 - [INFO] - from application in play-akka.actor.default-dispatcher-28 
-http://localhost:9034/dataset/getAllDatasets/json
+2015-11-20 00:47:52,979 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:h2:file:data/db
+
+2015-11-20 00:47:53,093 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-11-20 00:48:08,580 - [INFO] - from application in play-akka.actor.default-dispatcher-27 
+http://localhost:9034/users/114
 

@@ -88,7 +88,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">@session.get("email")<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="@routes.Application.logout()">Log out</a></li>
-								<li><a href="@routes.Application.logout()">My Profile</a></li>
+								<li><a href="@routes.UserProfileController.getUserProfile(Long.parseLong(session.get("id")))">My Profile</a></li>
 							</ul>
 						</li>
 					}	

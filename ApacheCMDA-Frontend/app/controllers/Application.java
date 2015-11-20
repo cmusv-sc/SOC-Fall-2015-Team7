@@ -42,6 +42,8 @@ public class Application extends Controller {
 
         public String email;
         public String password;
+        public long id;
+        public String userName;
         
         public String validate() {
             ObjectNode jsonData = Json.newObject();
@@ -50,9 +52,12 @@ public class Application extends Controller {
             // POST Climate Service JSON data
             JsonNode response = APICall.postAPI(Constants.NEW_BACKEND 
                         + Constants.IS_USER_VALID, jsonData);
-            if (response.get("success") == null) {
+            System.out.println("*****************"+response);
+            if (response.get("id") == null) {
               return "Invalid user or password";
             }
+            this.userName = response.path("userName").asText();
+            this.id = response.path("id").asLong();
             return null;
         }
         
@@ -83,6 +88,8 @@ public class Application extends Controller {
         } else {
             session().clear();
             session("email", loginForm.get().email);
+            session("id", String.valueOf(loginForm.get().id));
+            session("userName", loginForm.get().userName);
             return redirect(routes.ClimateServiceController.home("", "", ""));
         }
     }

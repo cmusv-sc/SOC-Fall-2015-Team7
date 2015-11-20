@@ -92,23 +92,16 @@ public class APICall {
 					@Override
 					public JsonNode apply(WS.Response response)
 							throws Throwable {
-						ObjectNode jsonData = Json.newObject();
 						if ((response.getStatus() == 201 || response
 								.getStatus() == 200)) {
 							try {
-								// modified by xuehung
-								jsonData.put("success", "Success!");
-								return jsonData;
-								//return response.asJson();
+								return response.asJson();
 							}
 							catch (Exception e){
 								return createResponse(ResponseType.SUCCESS);
 							}
 						} else {
-							// modified by xuehung
-							jsonData.put("error", response.getBody());
-							return jsonData;
-							//return createResponse(ResponseType.SAVEERROR);
+							return createResponse(ResponseType.SAVEERROR);
 						}
 					}
 				});
