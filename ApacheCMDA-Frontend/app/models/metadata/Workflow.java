@@ -23,7 +23,7 @@ public class Workflow {
 	private static final String GET_NUM_ENTRY = Constants.NEW_BACKEND+"workflow/getNumEntry";
 	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
-	private String id;
+	private long id;
 	private String name;
 	private String purpose;
 	private String author;
@@ -122,11 +122,11 @@ public class Workflow {
 		this.linksInstructions = linksInstructions;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -175,7 +175,7 @@ public class Workflow {
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
-			newWorkflow.setId(json.path("id").asText());
+			newWorkflow.setId(json.path("id").asLong());
 			newWorkflow.setName(json.get("name").asText());
 			newWorkflow.setPurpose(json.path("purpose").asText());
 			
@@ -199,7 +199,7 @@ public class Workflow {
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
-			newWorkflow.setId(json.path("id").asText());
+			newWorkflow.setId(json.path("id").asLong());
 			newWorkflow.setName(json.get("name").asText());
 			newWorkflow.setPurpose(json.path("purpose").asText());
 			newWorkflow.setAuthor(json.path("author").asText());
@@ -229,32 +229,24 @@ public class Workflow {
 //		newWorkflow.setCreateTime(json.path("createTime").asText());
 //		newWorkflow.setVersionNo(json.path("versionNo").asText());
 		Workflow newWorkflow = null;
-		try {
-			newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
-			
-			List<String> list = new ArrayList<String>();
-			for (int i= 0; i < json.path("climateServiceSet").size();i++)
-				list.add(json.path("climateServiceSet").get(i).path("name").asText());
-			newWorkflow.setClimateServiceSetList(list);
+		newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
+		
+		List<String> list = new ArrayList<String>();
+		for (int i= 0; i < json.path("climateServiceSet").size();i++)
+			list.add(json.path("climateServiceSet").get(i).path("name").asText());
+		newWorkflow.setClimateServiceSetList(list);
 
-			String datasets = json.path("dataset").asText();
-			list = new ArrayList<String>();
-			for (String set : datasets.split(";"))
-				list.add(set);
-			newWorkflow.setDatasetList(list);
-			
-			String otherWorkflows = json.path("otherWorkflows").asText();
-			list = new ArrayList<String>();
-			for (String workflow:otherWorkflows.split(";"))
-				list.add(workflow);
-			newWorkflow.setOtherWorkflowsList(list);
-			
-			OutputStream out = new BufferedOutputStream(new FileOutputStream("public/tmp.png"));
-			out.write(newWorkflow.getImage());
-			out.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		String datasets = json.path("dataset").asText();
+		list = new ArrayList<String>();
+		for (String set : datasets.split(";"))
+			list.add(set);
+		newWorkflow.setDatasetList(list);
+		
+		String otherWorkflows = json.path("otherWorkflows").asText();
+		list = new ArrayList<String>();
+		for (String workflow:otherWorkflows.split(";"))
+			list.add(workflow);
+		newWorkflow.setOtherWorkflowsList(list);
 		return newWorkflow; // newWorkflow
 	}
 	

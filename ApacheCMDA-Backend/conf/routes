@@ -10,6 +10,7 @@
 GET		  		/workflow/getAllWorkflows/json				@controllers.WorkflowController.getAllWorkflows(format: String="json")
 GET		  		/workflow/getPageWorkflows/json				@controllers.WorkflowController.getPageWorkflows(format: String="json", page: Int?=1, size: Int?=10)										
 GET				/workflow/getOneWorkflow/id/:id				@controllers.WorkflowController.getOneWorkflow(format: String?="json", id: Long)
+GET				/workflow/getWorkflowByAuthorId/:id			@controllers.WorkflowController.getWorkflowByAuthorId(id: Int)
 GET				/workflow/getNumEntry						@controllers.WorkflowController.getNumEntry
 POST		  	/workflow/newWorkflow						@controllers.WorkflowController.addWorkflow
 DELETE        /workflow/deleteWorkflow/id/:id 				@controllers.WorkflowController.deleteWorkflowById(id: Long)

@@ -82,6 +82,12 @@ public class WorkflowController extends Controller{
 
 		return ok(workflow);
 	}
+	
+	public Result getWorkflowByAuthorId(int id) {
+		List<Workflow> result = workflowRepository.findByAuthorId(id);
+		String workflow = new Gson().toJson(result);
+		return ok(workflow);
+	}
 
 	public Result getNumEntry() {
 		JsonObject rtn = new JsonObject();

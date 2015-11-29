@@ -67,5 +67,9 @@ public class WorkflowController extends Controller {
 		}
 		return redirect("/workflow/new/workflow");
 	}
-
+	
+    public static Result getImage(long id) {
+        Workflow tmp = Workflow.one(id);
+        return ok(tmp.getImage()).as("image/png");
+    }
 }
