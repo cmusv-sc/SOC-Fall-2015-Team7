@@ -119,7 +119,9 @@ public class WorkflowController extends Controller{
 		String otherWorkflows = json.path("otherWorkflows").asText();
 	    String userIdSet = json.path("userSet").asText();
 	    String climateServiceIdSet = json.path("climateServiceSet").asText();
-
+	    int isQuestion = json.path("isQuestion").asInt();
+	    int answerId = 0; //json.path("answerId").asInt();
+	    
 	    List<String> userIdList = Arrays.asList(userIdSet.split("\\s*,\\s*"));
 	    List<String> climateServiceIdList = Arrays.asList(climateServiceIdSet.split("\\s*,\\s*"));
 
@@ -140,7 +142,7 @@ public class WorkflowController extends Controller{
 			}
 
 			Workflow workflow = new Workflow(author, authorId, name, purpose, input, output, image, contributors, linksInstructions, createTime,
-					versionNo, dataset, otherWorkflows, userSetList, climateServiceSetList) ;
+					versionNo, dataset, otherWorkflows, userSetList, climateServiceSetList,isQuestion, answerId) ;
 			workflowRepository.save(workflow);
 			System.out.println("Workflow saved: " + workflow.getId());
 			return created(new Gson().toJson(workflow.getId()));
@@ -161,5 +163,20 @@ public class WorkflowController extends Controller{
 		workflowRepository.delete(workflow);
 		System.out.println("Workflow is deleted: " + id);
 		return ok("Workflow is deleted: " + id);
+	}
+	
+	public Result markAnswer(){
+		JsonNode json = request().body().asJson();
+		if (json == null) {
+			System.out.println("Workflow not created, expecting Json data");
+			return badRequest("Workflow not created, expecting Json data");
+		}
+		
+		long workflowId = json.path("workflowId").asLong();
+		int commentId = json.path("commentId").asInt();
+		Workflow w = workflowRepository.findOne(workflowId);
+		w.setAnswerId(commentId);
+		workflowRepository.save(w);
+		return ok("Mark answer success");
 	}
 }

@@ -49,6 +49,10 @@ public class Workflow {
 	private String versionNo;
 	private String dataset;
 	private String otherWorkflows;
+	@Column(columnDefinition="TINYINT DEFAULT 0")
+	private int isQuestion;
+	@Column(columnDefinition="INTEGER DEFAULT 0")
+	private int answerId;
 
 	//	private long rootWorkflowId;
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
@@ -64,7 +68,7 @@ public class Workflow {
 	
 	public Workflow(String author, int authorId, String name, String purpose, String input, String output, byte[] image, String contributors, String linksInstructions, Date createTime,
 			String versionNo, String dataset, String otherWorkflows, List<User> userSet,
-			List<ClimateService> climateServiceSet) {
+			List<ClimateService> climateServiceSet, int isQuestion, int answerId) {
 		super();
 		this.author = author;
 		this.authorId = authorId;
@@ -82,6 +86,8 @@ public class Workflow {
 		this.otherWorkflows = otherWorkflows;
 		this.userSet = userSet;
 		this.climateServiceSet = climateServiceSet;
+		this.isQuestion = isQuestion;
+		this.setAnswerId(answerId);
 	}
 
 	public String getName() {
@@ -214,6 +220,22 @@ public class Workflow {
 	public long getId() {
 		return id;
 	}
+	
+	public int getAnswerId() {
+		return answerId;
+	}
+
+	public void setAnswerId(int answerId) {
+		this.answerId = answerId;
+	}
+	
+	public int getIsQuestion() {
+		return isQuestion;
+	}
+
+	public void setIsQuestion(int isQuestion) {
+		this.isQuestion = isQuestion;
+	}
 
 	@Override
 	public String toString() {
@@ -222,6 +244,5 @@ public class Workflow {
 				+ ", userSet=" + userSet //+ ", rootWorkflowId=" + rootWorkflowId 
 				+ ", climateServiceSet=" + climateServiceSet + "]";
 	}
-	
 	
 }
