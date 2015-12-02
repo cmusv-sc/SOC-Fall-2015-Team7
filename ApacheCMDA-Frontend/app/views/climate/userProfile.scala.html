@@ -14,12 +14,13 @@
  * See the License for the specific language governing permissions and         *
  * limitations under the License.                                              *
  *******************************************************************************@ 
-@(user: metadata.User)
+@(user: metadata.User, workflows: List[metadata.Workflow])
 
 @import helper._ 
 
 @main("User Profile") {
-	<h1>User Profile</h1>
+	<h1>@user.getFirstName() @user.getLastName()'s Profile</h1>
+	<h2>Is Updated</h2>
 	<h3>User ID</h3>
 	<p>@user.getId()</p>
 	<h3>User Name</h3>
@@ -44,6 +45,15 @@
 	<p>@user.getResearchFields</p>
 	<h3>Highest Degree</h3>
 	<p>@user.getHighestDegree</p>
+	<h3>Contributed Workflows</h3>
+	<p>@if(workflows.size()==0) {
+	<div>None for now.</div>
+	} else {
+		@for(workflow <- workflows){
+		<div>@workflow.getName() , created on @workflow.getCreateTime()</div>
+		}
+		}
+	</p>
 	
 	
 }
