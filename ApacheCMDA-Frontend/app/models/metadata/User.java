@@ -28,7 +28,33 @@ public class User {
 
 	private static final String GET_ONE_USER_CALL_TO_BACKEND = Constants.NEW_BACKEND+"users/";
 	private static final String GET_ALL_WORKFLOWS_OF_A_USER_FROM_BACKEND = Constants.NEW_BACKEND+"workflow/getWorkflowsOfUser/";
+	private static final String GET_ALL_SUBSCRIPTER_PART1 = Constants.NEW_BACKEND+"subscription/getSubscriptionByUserID/id/";
+	private static final String GET_ALL_SUBSCRIPTER_PART2 = "/target/";
+	
 
+	public static List<Subscription> getSubscripterList(Long id, String targetClass) {
+		System.out.println("######getSubscripterList called");
+		JsonNode subscriptionList;
+		subscriptionList = APICall.callAPI(GET_ALL_SUBSCRIPTER_PART1 + String.valueOf(id) + GET_ALL_SUBSCRIPTER_PART2 + targetClass);
+
+		ArrayList<Subscription> resultList = new ArrayList<>();
+
+		if (subscriptionList == null || subscriptionList.has("error")) {
+			System.out.println("########Error OR Null json");
+			return resultList;
+		}
+
+		for (int i = 0; i < subscriptionList.size(); i++) {
+			JsonNode json = subscriptionList.path(i);
+		// 	Workflow newWorkflow = new Workflow();
+			Subscription newSub = new Subscription();
+			newSub.setSubscriptTargetClass(json.path("subscriptTargetClass").asText());
+			newSub.setTargetId(json.path("targetId").asLong());
+			newSub.setUserId(json.path("userId").asLong());
+			resultList.add(newSub);
+		}
+		return resultList;
+	}
 
 	public static User one(Long id) {
 		JsonNode json;
@@ -70,7 +96,7 @@ public class User {
 		// 	return "None";
 		// }
 		// return ids.toString();
-		System.out.println("###########getUserWorkflows called");
+		// System.out.println("###########getUserWorkflows called");
 		JsonNode workflowList;
 		List<Workflow> resultList = new ArrayList<Workflow>();
 		workflowList = APICall.callAPI(GET_ALL_WORKFLOWS_OF_A_USER_FROM_BACKEND + String.valueOf(id));

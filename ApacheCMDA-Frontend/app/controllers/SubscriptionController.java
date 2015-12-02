@@ -16,13 +16,22 @@ import play.mvc.*;
 import util.APICall;
 import util.APICall.ResponseType;
 import views.html.climate.*;
+import java.util.List;
+import models.metadata.Subscription;
+import java.util.ArrayList;
 
 
 public class SubscriptionController extends Controller {
 	
 	public static Result getSubscripterList(Long userID) {
-		// return ok(subscription.render(User.one(userID), Subsciption.getSubscripterList(UserID));
-		return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
+		
+		List<Subscription> workflowSub = User.getSubscripterList(userID, "Workflow");
+		List<Subscription> userSub = User.getSubscripterList(userID, "User");
+		List<Subscription> newList = new ArrayList<>(workflowSub.size() + userSub.size());
+		newList.addAll(workflowSub);
+		newList.addAll(userSub);
+		return ok(subscription.render(User.one(userID), newList));
+		// return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
 	}
 
 	public static Result getSubscripteeList(Long userID) {

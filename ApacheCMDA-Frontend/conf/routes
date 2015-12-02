@@ -55,3 +55,6 @@ GET     	/assets/*file               						controllers.Assets.at(path="/public",
 
 #User Profile
 GET         /userProfile/:id                                       controllers.UserProfileController.getUserProfile(id:Long)
+
+#Subscription
+GET             /subscription/getSubscriptionByUserID/:id                    controllers.SubscriptionController.getSubscripterList(id: Long)

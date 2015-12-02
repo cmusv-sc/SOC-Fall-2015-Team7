@@ -50,7 +50,7 @@ public class SubscriptionController extends Controller {
 
 	public Result test() {
 		System.out.println("test called");
-		return badRequest("Zhaige SB");
+		return badRequest("TEST SUCCESSFUL");
 	}
 
 	public Result addSubscription() {
@@ -81,6 +81,7 @@ public class SubscriptionController extends Controller {
 		}
 	}
 
+	//Returns a JSON Array
 	public Result getSubscriptionByUserID(Long id, String targetClass, String format) {
 		if (id == null || targetClass == null) {
 			System.out.println("User id/TargetClass is null or empty!");
@@ -100,7 +101,8 @@ public class SubscriptionController extends Controller {
 		}
 		String result = new String();
 		if (format.equals("json")) {
-			result = new Gson().toJson(subs.get(0));
+			// result = new Gson().toJson(subs.get(0));
+			result = new Gson().toJson(subs);
 		}
 		return ok(result);
 	}
