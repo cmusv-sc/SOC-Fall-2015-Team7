@@ -21,8 +21,8 @@
 @main("User Profile") {
 	<h1>@user.getFirstName() @user.getLastName()'s Profile</h1>
 	<p>@if(!session.get("id").toString().equals(user.getId().toString())) {
-	<div><li><a href="@routes.WorkflowController.home()">Subscribe to this user</a></li></div>
-	} else {
+	<div><li><a href="@controllers.SubscriptionController.subscribeToUser(Long.parseLong(session.get("id")), user.getId())">Subscribe to this user</a></li></div>
+		} else {
 		<div>This is your profile.</div>
 	}
 	</p>

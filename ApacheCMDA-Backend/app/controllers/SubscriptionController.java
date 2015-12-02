@@ -70,7 +70,7 @@ public class SubscriptionController extends Controller {
 		}
 	}
 
-	private boolean subscriptionDataExists(Long userID, String subscriptTargetClass, Long targetID) {
+	public boolean subscriptionDataExists(Long userID, String subscriptTargetClass, Long targetID) {
 		List<Subscription> result = subscriptionRepository.findByUserIdAndSubscriptTargetClassAndTargetId(userID, subscriptTargetClass, targetID);
 		if (result.size() == 0) {
 			return false;

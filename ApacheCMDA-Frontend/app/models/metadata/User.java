@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import util.APICall;
 import util.Constants;
 import java.util.*;
+import play.mvc.*;
 
 public class User {
 
@@ -32,6 +33,39 @@ public class User {
 	private static final String GET_ALL_SUBSCRIPTER_PART2 = "/target/";
 	private static final String GET_ALL_SUBSCRIPTEE_PART1 = Constants.NEW_BACKEND+"subscription/getSubscriptionByTargetID/targetid/";
 	private static final String GET_ALL_SUBSCRIPTEE_PART2 = "/target/";
+	private static final String POST_SUBSCRIBE_TO_USER_PART1 = Constants.NEW_BACKEND+"subscription/subscribeToUser/id/";
+	private static final String POST_SUBSCRIBE_TO_USER_PART2 = "/target/";
+	private static final String CHECK_SUBSCRIPTION_EXISTS_PART1 = Constants.NEW_BACKEND + "subscription/subscriptionDataExists/id/";
+	private static final String CHECK_SUBSCRIPTION_EXISTS_PART2 = "/targetClass/";
+	private static final String CHECK_SUBSCRIPTION_EXISTS_PART3 = "/target/";
+
+	// // To discuss exception handling.
+	// public static boolean checkSubscriptionExists(Long userId, String subscriptTargetClass, Long targetId) {
+	// 	boolean exists;
+	// 	try {
+	// 		JsonNode result = APICall.callAPI(CHECK_SUBSCRIPTION_EXISTS_PART1 + String.valueOf(userId) + CHECK_SUBSCRIPTION_EXISTS_PART2 + subscriptTargetClass + CHECK_SUBSCRIPTION_EXISTS_PART3 + String.valueOf(targetId));
+	// 		if (result == null || result.has("error")) {
+	// 			System.out.println("########Error OR Null json");
+	// 			return true;
+	// 		}
+	// 		System.out.println(result.toString());
+	// 		exists = true;
+	// 		return exists;
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 		return true;
+	// 	}
+	// }
+
+	public static boolean subscribeToUser(Long userId, Long targetId) {
+		try {
+			APICall.callAPI(POST_SUBSCRIBE_TO_USER_PART1 + String.valueOf(userId) + POST_SUBSCRIBE_TO_USER_PART2 + String.valueOf(targetId));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 	public static List<Subscription> getSubscripteeList(Long targetID, String targetClass) {
 		System.out.println("######getSubscripteeList called");

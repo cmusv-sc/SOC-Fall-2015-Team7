@@ -37,6 +37,17 @@ public class SubscriptionController extends Controller {
 		return ok(subscription.render(User.one(userID), subList, subedList));
 	}
 
+	public static void subscribeToUser(Long userId, Long targetId) {
+		if (User.subscribeToUser(userId, targetId))
+			flash("success", "You have subscribed to this user.");
+		// return getSubscriptionInfo(userId);
+		// return redirect("/subscription/getSubscriptionInfo/" + Long.toString(userId));
+	}
+
+	// public static boolean subscriptionDataExists(Long userId, String subscriptTargetClass, Long targetId) {
+	// 	return User.checkSubscriptionExists(userId, subscriptTargetClass, targetId);
+	// }
+
 	// public static Result getSubscripterList(Long userID) {
 		
 	// 	List<Subscription> workflowSub = User.getSubscripterList(userID, "Workflow");
