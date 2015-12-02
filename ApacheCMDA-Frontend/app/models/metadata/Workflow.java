@@ -38,6 +38,15 @@ public class Workflow {
 	private List<String> datasetList;
 	private List<String> otherWorkflowsList;
 	private List<String> climateServiceSetList;
+	private int isQuestion;
+
+	public int getIsQuestion() {
+		return isQuestion;
+	}
+
+	public void setIsQuestion(int isQuestion) {
+		this.isQuestion = isQuestion;
+	}
 
 	public List<String> getClimateServiceSetList() {
 		return climateServiceSetList;
@@ -199,13 +208,15 @@ public class Workflow {
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
-			newWorkflow.setId(json.path("id").asLong());
-			newWorkflow.setName(json.get("name").asText());
-			newWorkflow.setPurpose(json.path("purpose").asText());
-			newWorkflow.setAuthor(json.path("author").asText());
-			newWorkflow.setAuthorId(json.path("authorId").asInt());
-			newWorkflow.setCreateTime(json.path("createTime").asText());
-			newWorkflow.setVersionNo(json.path("versionNo").asText());
+//			newWorkflow.setId(json.path("id").asLong());
+//			newWorkflow.setName(json.get("name").asText());
+//			newWorkflow.setPurpose(json.path("purpose").asText());
+//			newWorkflow.setAuthor(json.path("author").asText());
+//			newWorkflow.setAuthorId(json.path("authorId").asInt());
+//			newWorkflow.setCreateTime(json.path("createTime").asText());
+//			newWorkflow.setVersionNo(json.path("versionNo").asText());
+//			newWorkflow.setIsQuestion(json.path("isQuestion").asInt());
+			newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
 			workflows.add(newWorkflow);
 		}
 		return workflows;
