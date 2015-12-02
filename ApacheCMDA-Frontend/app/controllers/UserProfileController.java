@@ -21,6 +21,7 @@ import views.html.climate.*;
 public class UserProfileController extends Controller {
 	
 	public static Result getUserProfile(Long userID) {
+		System.out.println("getUserProfile Called");
 		return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
 	}
 	// public static Result home(int page) {

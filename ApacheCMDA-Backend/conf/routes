@@ -15,6 +15,8 @@ GET				/workflow/getNumEntry						@controllers.WorkflowController.getNumEntry
 POST		  	/workflow/newWorkflow						@controllers.WorkflowController.addWorkflow
 DELETE        /workflow/deleteWorkflow/id/:id 				@controllers.WorkflowController.deleteWorkflowById(id: Long)
 POST			/workflow/markAnswer						@controllers.WorkflowController.markAnswer
+GET             /workflow/getWorkflowsOfUser/:id            @controllers.WorkflowController.getWorkflowsOfUser(id: Long)
+
 
 # Climate Service
 GET           /climateService/getClimateService/:name/json                                              @controllers.ClimateServiceController.getClimateService(name: String, format: String="json")
