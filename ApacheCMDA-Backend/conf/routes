@@ -11,6 +11,7 @@ POST 			/subscription/addNewSubscription 			@controllers.SubscriptionController.
 GET 			/subscription/test							@controllers.SubscriptionController.test()
 GET             /subscription/getSubscriptionByUserID/id/:id/target/:targetClass                    @controllers.SubscriptionController.getSubscriptionByUserID(id: Long, targetClass: String, format: String="json")
 GET             /subscription/getSubscriptionByTargetID/targetid/:id/target/:targetClass                      @controllers.SubscriptionController.getSubscriptionByTargetID(id: Long, targetClass: String, format: String="json")
+GET             /subscription/subscribeToUser/id/:id/target/:target              @controllers.SubscriptionController.subscribeToUser(id: Long, target: Long)
 
 
 # Workflow

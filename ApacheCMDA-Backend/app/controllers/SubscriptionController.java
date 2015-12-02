@@ -53,6 +53,32 @@ public class SubscriptionController extends Controller {
 		return badRequest("TEST SUCCESSFUL");
 	}
 
+	public Result subscribeToUser(Long userId, Long targetId) {
+		String subscriptTargetClass = "User";
+		if (subscriptionDataExists(userId, subscriptTargetClass, targetId)) {
+			return badRequest("Subscription already exists: " + userId + " " + subscriptTargetClass + " " + targetId);
+		}
+		try {
+			Subscription subs = new Subscription(userId, subscriptTargetClass, targetId);
+			subscriptionRepository.save(subs);
+			System.out.println("Subscription saved");
+			return created(new Gson().toJson(subs.getId()));
+		} catch (PersistenceException pe) {
+			pe.printStackTrace();
+			System.out.println("Subscription not saved: " + userId + " " + subscriptTargetClass + " " + targetId);
+			return badRequest("Subscription not saved: " + userId + " " + subscriptTargetClass + " " + targetId);
+		}
+	}
+
+	private boolean subscriptionDataExists(Long userID, String subscriptTargetClass, Long targetID) {
+		List<Subscription> result = subscriptionRepository.findByUserIdAndSubscriptTargetClassAndTargetId(userID, subscriptTargetClass, targetID);
+		if (result.size() == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	public Result addSubscription() {
 		JsonNode json = request().body().asJson();
 		if (json == null) {
