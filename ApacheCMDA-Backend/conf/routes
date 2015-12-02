@@ -6,6 +6,12 @@
 # will call on the GlobalSettings.getController method to resolve the actual controller instance.
 # GET     /                           @controllers.Application.index
 
+# Subscribe
+POST 			/subscription/addNewSubscription 			@controllers.SubscriptionController.addSubscription()
+GET 			/subscription/test							@controllers.SubscriptionController.test()
+GET             /subscription/getSubscriptionByUserID/id/:id/target/:targetClass                    @controllers.SubscriptionController.getSubscriptionByUserID(id: Long, targetClass: String, format: String="json")
+
+
 # Workflow
 GET		  		/workflow/getAllWorkflows/json				@controllers.WorkflowController.getAllWorkflows(format: String="json")
 GET		  		/workflow/getPageWorkflows/json				@controllers.WorkflowController.getPageWorkflows(format: String="json", page: Int?=1, size: Int?=10)										
