@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and         *
  * limitations under the License.                                              *
  *******************************************************************************@ 
-@(user: metadata.User, subList: List[metadata.Subscription])
+@(user: metadata.User, subList: List[metadata.Subscription], subedList: List[metadata.Subscription])
 
 @import helper._ 
 
@@ -35,6 +35,14 @@
 		}
 		}
 	</p>
-	
+	<h3>Subscripted by:</h3>
+	<p>@if(subedList.size()==0) {
+	<div>None for now.</div>
+	} else {
+		@for(sub <- subedList){
+		<div>User : @sub.getUserId()</div>
+		}
+		}
+	</p>
 	
 }

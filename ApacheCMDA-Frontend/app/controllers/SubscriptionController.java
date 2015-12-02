@@ -23,21 +23,40 @@ import java.util.ArrayList;
 
 public class SubscriptionController extends Controller {
 	
-	public static Result getSubscripterList(Long userID) {
-		
+	public static Result getSubscriptionInfo(Long userID) {
 		List<Subscription> workflowSub = User.getSubscripterList(userID, "Workflow");
 		List<Subscription> userSub = User.getSubscripterList(userID, "User");
-		List<Subscription> newList = new ArrayList<>(workflowSub.size() + userSub.size());
-		newList.addAll(workflowSub);
-		newList.addAll(userSub);
-		return ok(subscription.render(User.one(userID), newList));
-		// return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
+		List<Subscription> subList = new ArrayList<>(workflowSub.size() + userSub.size());
+		subList.addAll(workflowSub);
+		subList.addAll(userSub);
+		workflowSub = User.getSubscripteeList(userID, "Workflow");
+		userSub = User.getSubscripteeList(userID, "User");
+		List<Subscription> subedList = new ArrayList<>(workflowSub.size() + userSub.size());
+		subedList.addAll(workflowSub);
+		subedList.addAll(userSub);
+		return ok(subscription.render(User.one(userID), subList, subedList));
 	}
 
-	public static Result getSubscripteeList(Long userID) {
-		return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
-		// return ok(subscription.render(User.one(userID), Subsciption.getSubscripteeList(UserID)));
-	}
+	// public static Result getSubscripterList(Long userID) {
+		
+	// 	List<Subscription> workflowSub = User.getSubscripterList(userID, "Workflow");
+	// 	List<Subscription> userSub = User.getSubscripterList(userID, "User");
+	// 	List<Subscription> newList = new ArrayList<>(workflowSub.size() + userSub.size());
+	// 	newList.addAll(workflowSub);
+	// 	newList.addAll(userSub);
+	// 	return ok(subscription.render(User.one(userID), newList));
+	// 	// return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
+	// }
+
+	// public static Result getSubscripteeList(Long userID) {
+	// 	List<Subscription> workflowSub = User.getSubscripteeList(userID, "Workflow");
+	// 	List<Subscription> userSub = User.getSubscripteeList(userID, "User");
+	// 	List<Subscription> newList = new ArrayList<>(workflowSub.size() + userSub.size());
+	// 	newList.addAll(workflowSub);
+	// 	newList.addAll(userSub);
+	// 	return ok(subscription.render(User.one(userID), newList));
+	// 	// return ok(subscription.render(User.one(userID), Subsciption.getSubscripteeList(UserID)));
+	// }
 
 	// public static Result home(int page) {
 	// 	return ok(forum.render(Workflow.page(page), page, Workflow.getNumPage()));

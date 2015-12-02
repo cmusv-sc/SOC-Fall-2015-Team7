@@ -10,6 +10,7 @@
 POST 			/subscription/addNewSubscription 			@controllers.SubscriptionController.addSubscription()
 GET 			/subscription/test							@controllers.SubscriptionController.test()
 GET             /subscription/getSubscriptionByUserID/id/:id/target/:targetClass                    @controllers.SubscriptionController.getSubscriptionByUserID(id: Long, targetClass: String, format: String="json")
+GET             /subscription/getSubscriptionByTargetID/targetid/:id/target/:targetClass                      @controllers.SubscriptionController.getSubscriptionByTargetID(id: Long, targetClass: String, format: String="json")
 
 
 # Workflow

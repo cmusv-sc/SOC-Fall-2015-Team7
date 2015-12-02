@@ -32,4 +32,5 @@ import javax.inject.Singleton;
 public interface SubscriptionRepository extends CrudRepository<Subscription, Long> {
 	List<Subscription> findByUserIdAndSubscriptTargetClassAndTargetId(Long userId, String subscriptTargetClass, Long targetId);
 	List<Subscription> findByUserIdAndSubscriptTargetClass(Long userId, String subscriptTargetClass);
+	List<Subscription> findBySubscriptTargetClassAndTargetId(String subscriptTargetClass, Long targetID);
 }

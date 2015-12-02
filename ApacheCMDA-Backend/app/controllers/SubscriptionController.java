@@ -106,5 +106,30 @@ public class SubscriptionController extends Controller {
 		}
 		return ok(result);
 	}
+
+	public Result getSubscriptionByTargetID(Long targetID, String targetClass, String format) {
+		if (targetID == null || targetClass == null) {
+			System.out.println("Target id/TargetClass is null or empty!");
+			return badRequest("Target id/TargetClass is null or empty!");
+		}
+
+		if (!targetClass.equals("Workflow") && !(targetClass.equals("User"))) {
+			System.out.println("TargetClass is not valid!");
+			return badRequest("TargetClass is not valid!");
+		}
+
+		List<Subscription> subs = subscriptionRepository.findBySubscriptTargetClassAndTargetId(targetClass, targetID);
+
+		if (subs.size() == 0) {
+			System.out.println("Subscription not found");
+			return notFound("Subscription not found");
+		}
+		String result = new String();
+		if (format.equals("json")) {
+			// result = new Gson().toJson(subs.get(0));
+			result = new Gson().toJson(subs);
+		}
+		return ok(result);
+	}
 	
 }

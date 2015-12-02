@@ -89,6 +89,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="@routes.Application.logout()">Log out</a></li>
 								<li><a href="@routes.UserProfileController.getUserProfile(Long.parseLong(session.get("id")))">My Profile</a></li>
+								<li><a href="@routes.SubscriptionController.getSubscriptionInfo(Long.parseLong(session.get("id")))">My Subscriptions</a></li>
 							</ul>
 						</li>
 					}	
