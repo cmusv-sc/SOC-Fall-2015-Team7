@@ -120,13 +120,25 @@
                 <hr>
 
                 @for(oneComment <- comments){
-                <div class="well">
-                    <div>
-                        <h4> @oneComment.getUsername()
-                            <small>@oneComment.getDate()</small>
-                        </h4>
-                        <p>  Reply to @oneComment.getReplytoname(): <br>@oneComment.getComment() </p>
-                    </div>
+                @if(oneComment.getId() == workflow.getAnswerId()) {
+                	<div style="background: rgba(204, 255, 229, 0.3);" class="well">
+                	<span class="glyphicon glyphicon-star-empty"></span> Answer
+        			<a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-default">
+						<span class="glyphicon glyphicon-remove"></span> Cancel
+					</a>
+                } else {
+                	<div class="well">
+                }
+                    <h4> @oneComment.getUsername()
+                    	<small>@oneComment.getDate()</small>
+                        @if(workflow.getAnswerId() == 0 && workflow.getIsQuestion() == 1 && session.get("id") == String.valueOf(workflow.getAuthorId())) {                      	
+						    <a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-success btn-lg">
+						      <span class="glyphicon glyphicon-ok"></span> Mark Answer
+						    </a>
+                        }
+                   	</h4>
+                    <p>  Reply to @oneComment.getReplytoname(): <br>@oneComment.getComment() </p>
+
 
                     <button class="btn btn-primary" data-toggle="collapse" data-target="@{"#" + oneComment.getId()}">Reply</button>
 

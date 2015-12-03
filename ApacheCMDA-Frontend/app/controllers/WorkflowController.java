@@ -41,6 +41,7 @@ public class WorkflowController extends Controller {
 		try {
 			jsonData.put("author", session("userName"));
 			jsonData.put("authorId", session("id"));
+			jsonData.put("isQuestion", dc.field("isQuestion").value());
 			jsonData.put("name", dc.field("Name").value());
 			jsonData.put("purpose", dc.field("Purpose").value());
 			jsonData.put("input", dc.field("Input").value());
@@ -97,4 +98,9 @@ public class WorkflowController extends Controller {
         }
 	    return redirect("/workflow/" + df.get("workflowid"));
 	}
+    
+    public static Result markAnswer(int workflowId, int commentId) {
+        Workflow.markAnswer(workflowId, commentId);
+        return redirect("/workflow/" + workflowId);
+    }
 }

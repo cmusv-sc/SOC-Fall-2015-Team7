@@ -10,8 +10,10 @@ import java.util.List;
 import org.apache.commons.codec.binary.Base64;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
 
+import play.libs.Json;
 import util.APICall;
 import util.Constants;
 
@@ -23,6 +25,7 @@ public class Workflow {
 	private static final String GET_NUM_ENTRY = Constants.NEW_BACKEND+"workflow/getNumEntry";
 	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
+    private static final String MARK_ANSWER = Constants.NEW_BACKEND+"workflow/markAnswer";
 	private long id;
 	private String name;
 	private String purpose;
@@ -39,6 +42,15 @@ public class Workflow {
 	private List<String> otherWorkflowsList;
 	private List<String> climateServiceSetList;
 	private int isQuestion;
+	private int answerId;
+	
+	public int getAnswerId() {
+		return answerId;
+	}
+
+	public void setAnswerId(int answerId) {
+		this.answerId = answerId;
+	}
 
 	public int getIsQuestion() {
 		return isQuestion;
@@ -269,6 +281,15 @@ public class Workflow {
 		JsonNode node = APICall.callAPI(GET_NUM_ENTRY);
 		int numPage = (int) Math.ceil((double)node.path("numEntry").asLong() / PAGESIZE);
 		return numPage;
+	}
+
+	public static void markAnswer(int workflowId, int commentId) {
+		ObjectNode jsonData = Json.newObject(); 
+        jsonData.put("workflowId", workflowId);
+        jsonData.put("commentId" , commentId);
+        
+        System.out.println(jsonData.toString());
+        APICall.postAPI(Workflow.MARK_ANSWER, jsonData);
 	}
 	
 }

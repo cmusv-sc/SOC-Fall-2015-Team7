@@ -175,7 +175,10 @@ public class WorkflowController extends Controller{
 		long workflowId = json.path("workflowId").asLong();
 		int commentId = json.path("commentId").asInt();
 		Workflow w = workflowRepository.findOne(workflowId);
-		w.setAnswerId(commentId);
+		if (w.getAnswerId() != commentId)
+			w.setAnswerId(commentId);
+		else
+			w.setAnswerId(0);
 		workflowRepository.save(w);
 		return ok("Mark answer success");
 	}
