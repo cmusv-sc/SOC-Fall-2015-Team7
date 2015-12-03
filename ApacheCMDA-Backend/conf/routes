@@ -13,6 +13,8 @@ GET             /subscription/getSubscriptionByUserID/id/:id/target/:targetClass
 GET             /subscription/getSubscriptionByTargetID/targetid/:id/target/:targetClass                      @controllers.SubscriptionController.getSubscriptionByTargetID(id: Long, targetClass: String, format: String="json")
 GET             /subscription/subscribeToUser/id/:id/target/:target              @controllers.SubscriptionController.subscribeToUser(id: Long, target: Long)
 
+# Group
+GET             /group/getAllGroups/json					@controllers.UserGroupController.getAllGroups(format: String="json")
 
 # Workflow
 GET		  		/workflow/getAllWorkflows/json				@controllers.WorkflowController.getAllWorkflows(format: String="json")

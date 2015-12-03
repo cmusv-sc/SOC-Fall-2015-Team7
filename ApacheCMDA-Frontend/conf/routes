@@ -58,3 +58,6 @@ GET         /userProfile/:id                                       controllers.U
 
 #Subscription
 GET             /subscription/getSubscriptionInfo/:id          controllers.SubscriptionController.getSubscriptionInfo(id: Long)
+
+#UserGroup
+GET             /groups											controllers.UserGroupController.home()
