@@ -44,6 +44,15 @@ public class UserGroupController extends Controller {
         return ok(result);
     }
 
+    public Result getOneGroup(Long id, String format) {
+        UserGroup group = userGroupRepository.findById(id);
+        String result = new String();
+        if (format.equals("json")) {
+            result = new Gson().toJson(group);
+        }
+        return ok(result);
+    }
+
 // 	public Result getPageWorkflows(String format, int page, int size) {
 
 // 		int pageStartFrom1 = page-1;
@@ -157,6 +166,32 @@ public class UserGroupController extends Controller {
             return created("Success");
         } catch (Exception e) {
             return badRequest("User Not set as admin");
+        }
+    }
+
+    public Result addMemberToGroup(long groupId, long userId) {
+        try {
+            UserGroup targetGroup = userGroupRepository.findById(groupId);
+            User thisUser =  userRepository.findById(userId);
+            if (targetGroup.getMemberList().contains(thisUser)) {
+                System.out.println("User not added as member. Already member.");
+                return badRequest("User not added as member. Already member.");
+            }
+            if (targetGroup.getAdminList().contains(thisUser)) {
+                targetGroup.getAdminList().remove(thisUser);
+                targetGroup.getMemberList().add(thisUser);
+                System.out.println(userId + " has been demoted to member in " +
+                        "group " + groupId);
+            } else {
+                targetGroup.getMemberList().add(thisUser);
+                System.out.println(userId + "has been added to group " +
+                        groupId + " as member");
+            }
+
+            userGroupRepository.save(targetGroup);
+            return created("Success");
+        } catch (Exception e) {
+            return badRequest("User Not set as member");
         }
     }
 

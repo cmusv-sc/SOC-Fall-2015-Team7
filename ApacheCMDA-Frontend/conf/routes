@@ -61,3 +61,7 @@ GET             /subscription/getSubscriptionInfo/:id          controllers.Subsc
 
 #UserGroup
 GET             /groups											controllers.UserGroupController.home()
+GET             /groups/id/:id                                  controllers.UserGroupController.group(id: Long)
+POST            /groups/createGroup/                            controllers.UserGroupController.newGroup()
+POST            /groups/addNewAdmin/:groupId                    controllers.UserGroupController.newAdmin(groupId: Long)
+POST            /groups/addNewMember/:groupId                   controllers.UserGroupController.newMember(groupId: Long)

@@ -1,0 +1,64 @@
+@*******************************************************************************
+* Licensed to the Apache Software Foundation (ASF) under one or more          *
+* contributor license agreements.  See the NOTICE file distributed with       *
+* this work for additional information regarding copyright ownership.         *
+* The ASF licenses this file to You under the Apache License, Version 2.0     *
+* (the "License"); you may not use this file except in compliance with        *
+* the License.  You may obtain a copy of the License at                       *
+*                                                                             *
+*    http://www.apache.org/licenses/LICENSE-2.0                               *
+*                                                                             *
+* Unless required by applicable law or agreed to in writing, software         *
+* distributed under the License is distributed on an "AS IS" BASIS,           *
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    *
+* See the License for the specific language governing permissions and         *
+* limitations under the License.                                              *
+*******************************************************************************@
+@(group: metadata.UserGroup, groupForm: play.data.Form[metadata.UserGroup])
+
+@import helper._
+
+@main("Group Info") {
+  <h3>Group Name: </h3><p>@group.getGroupName()</p>
+  <h3>Group Creator: </h3><p href="/user">@group.getAuthor()</p>
+  <h3>Group Members:</h3>
+  <h4>Administrators:</h4>
+  @for(admin <- group.getAdminList()){
+    <div>@admin.getUserName()</div>
+  }
+  <h4>Members:</h4>
+  @for(member <- group.getMemberList()){
+    <div>@member.getUserName()</div>
+  }
+  <br><br>
+
+  @if(session.get("id").toString().equals(group.getAuthorId().toString)) {
+    @helper.form(routes.UserGroupController.newAdmin(group.getId())) {
+      Appoint a new Administrator to this Group:
+      <div class = "form-group">
+        @inputText(
+          groupForm("newAdminId"),
+          '_id -> "NewAdminId",
+          '_label -> "NewAdminId"
+        )
+
+      </div>
+
+      <div>
+        <input class="btn" type="submit" value="Add new admin">
+      </div>
+    }
+
+    @helper.form(routes.UserGroupController.newMember(group.getId())) {
+      Appoint a new Member to this Group:
+      <div class = "form-group">
+      @inputText(
+        groupForm("newMemberId"),
+        '_id -> "newMemberId",
+        '_label -> "newMemberId"
+      )
+        <input class="btn" type="submit" value="Add new member">
+      </div>
+    }
+  }
+}

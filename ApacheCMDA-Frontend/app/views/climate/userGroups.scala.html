@@ -14,12 +14,11 @@
  * See the License for the specific language governing permissions and         *
  * limitations under the License.                                              *
  *******************************************************************************@
-@(groups: List[metadata.UserGroup])
+@(groups: List[metadata.UserGroup], groupForm: play.data.Form[metadata.UserGroup])
 
 @import helper._
 
 @main("User Groups") {
-    <a href="workflow/new/workflow" class="btn btn-info" role="button">Create New Group</a>
     <table class="table forum table-striped">
         <thead>
             <tr>
@@ -37,7 +36,7 @@
             <tr>
                 <td>@group.getId</td>
                 <td>
-                    <h4><a href="/workflow/@group.getId()">@group.getGroupName() </a></h4>
+                    <h4><a href="/groups/id/@group.getId()">@group.getGroupName() </a></h4>
                 </td>
                 <td class="text-center hidden-xs hidden-sm"><a href="/userProfile/@group.getAuthorId()">@group.getAuthor()</a></td>
                 <td>@group.getAdminList().size() Admin<br> @group.getMemberList.size() Member</td>
@@ -46,6 +45,27 @@
 
         </tbody>
     </table>
-</div>
+    @*<div>*@
+        @*Create a new group:*@
+        @*<form action='groups/createGroup/', method="post">*@
+            @*<input type="text" name="GroupName" value="GroupName">*@
+            @*<input class="btn" type="submit" value="Create Group">*@
+        @*</form>*@
+    @*</div>*@
 
+    @helper.form(routes.UserGroupController.newGroup()) {
+            Create A New Group:
+            <div class = "form-group">
+            @inputText(
+                groupForm("GroupName"),
+                '_type -> "hidden",
+                '_id -> "GroupName",
+                '_label -> "GroupName"
+            )
+            </div>
+
+            <div align="left">
+                <input class="btn" type="submit" value="Create Group">
+            </div>
+    }
 }

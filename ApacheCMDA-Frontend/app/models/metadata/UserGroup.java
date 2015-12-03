@@ -43,7 +43,14 @@ public class UserGroup {
 	private List<User> adminList;
 
 	private static final String GET_ALL_GROUP_CALL = Constants.NEW_BACKEND+"group/getAllGroups/json";
-	
+	private static final String GET_ONE_GROUP = Constants.NEW_BACKEND + "group/getOneGroup/id/";
+    private static final String CREATE_NEW_GROUP_PART1 = Constants.NEW_BACKEND + "group/createNewGroup/name/";
+    private static final String CREATE_NEW_GROUP_PART2 = "/creatorId/";
+    private static final String ADD_NEW_ADMIN_PART1 = Constants.NEW_BACKEND + "group/addAdminToGroup/groupId/";
+    private static final String ADD_NEW_ADMIN_PART2 ="/userId/";
+    private static final String ADD_NEW_MEMBER_PART1 = Constants.NEW_BACKEND + "group/addMemberToGroup/groupId/";
+    private static final String ADD_NEW_MEMBER_PART2 ="/userId/";
+
 	public UserGroup() {
         this.adminList = new ArrayList<>();
         this.memberList = new ArrayList<>();
@@ -107,6 +114,24 @@ public class UserGroup {
         this.memberList = memberList;
     }
 
+    public static UserGroup one(long id) {
+        JsonNode jsonNode = APICall.callAPI(GET_ONE_GROUP + id);
+        UserGroup newGroup = new UserGroup();
+        if (jsonNode == null || jsonNode.has("error") || jsonNode.isArray()) {
+            return newGroup;
+        }
+        Gson gson = new Gson();
+        newGroup = gson.fromJson(jsonNode.toString(), UserGroup.class);
+        return newGroup;
+    }
+
+    public static JsonNode create(String groupName, long id) {
+        System.out.println("Create visited");
+        String apiStr = CREATE_NEW_GROUP_PART1 + groupName + CREATE_NEW_GROUP_PART2 + id;
+        System.out.println(apiStr);
+        return APICall.callAPI(apiStr);
+    }
+
 	public static List<UserGroup> all() {
 		List<UserGroup> groups = new ArrayList<UserGroup>();
 
@@ -132,6 +157,14 @@ public class UserGroup {
 		
 		return groups;
 	}
+
+    public static JsonNode addNewAdmin(long groupId, long id) {
+        return APICall.callAPI(ADD_NEW_ADMIN_PART1 + groupId + ADD_NEW_ADMIN_PART2 + id);
+    }
+
+    public static JsonNode addNewMember(long groupId, long id) {
+        return APICall.callAPI((ADD_NEW_MEMBER_PART1 + groupId + ADD_NEW_MEMBER_PART2 + id));
+    }
 
 	@Override
 	public String toString() {

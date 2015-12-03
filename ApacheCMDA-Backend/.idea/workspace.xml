@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb097e0-8d03-4bae-ae3c-71025267f570" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroup.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.java" afterPath="$PROJECT_DIR$/app/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserGroup.java" afterPath="$PROJECT_DIR$/app/models/UserGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserGroupRepository.java" afterPath="$PROJECT_DIR$/app/models/UserGroupRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserRepository.java" afterPath="$PROJECT_DIR$/app/models/UserRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/controllers/UserGroupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/models/metadata/UserGroup.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/models/metadata/UserGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/header.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/header.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/error.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/error.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroups.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroups.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userProfile.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userProfile.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/conf/routes" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/conf/routes" />
     </list>
     <ignored path="$PROJECT_DIR$/target/native_libraries/" />
     <ignored path="$PROJECT_DIR$/target/resolution-cache/" />
@@ -50,8 +47,8 @@
       <file leaf-file-name="UserGroupController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/UserGroupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6781116">
-              <caret line="159" column="9" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.44206008">
+              <caret line="174" column="61" selection-start-line="174" selection-start-column="61" selection-end-line="174" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -103,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="70" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="70" />
+              <caret line="19" column="72" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -136,10 +133,10 @@
       <list>
         <option value="$PROJECT_DIR$/app/models/UserRepository.java" />
         <option value="$PROJECT_DIR$/app/models/UserGroupRepository.java" />
-        <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/models/User.java" />
         <option value="$PROJECT_DIR$/app/models/UserGroup.java" />
         <option value="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
+        <option value="$PROJECT_DIR$/conf/routes" />
       </list>
     </option>
   </component>
@@ -773,12 +770,12 @@
       <created>1449107090342</created>
       <option name="number" value="Default" />
       <updated>1449107090342</updated>
-      <workItem from="1449107135611" duration="6374000" />
+      <workItem from="1449107135611" duration="8822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6374000" />
+    <option name="totallyTimeSpent" value="8822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -829,14 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="70" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/UserGroupRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
@@ -879,10 +868,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="72" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6781116">
-          <caret line="159" column="9" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.44206008">
+          <caret line="174" column="61" selection-start-line="174" selection-start-column="61" selection-end-line="174" selection-end-column="61" />
           <folding />
         </state>
       </provider>
