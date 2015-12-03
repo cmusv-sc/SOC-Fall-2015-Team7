@@ -1,52 +1,48 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import com.google.gson.Gson;
+import models.User;
+import models.UserGroup;
+import models.UserGroupRepository;
+import models.UserRepository;
+import play.mvc.Controller;
+import play.mvc.Result;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.persistence.PersistenceException;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import models.UserGroupRepository;
-import models.UserGroup;
-import play.mvc.Controller;
-import play.mvc.Result;
-import org.apache.commons.codec.binary.Base64;
+import java.util.ArrayList;
+import java.util.List;
 
 @Named
 @Singleton
-public class UserGroupController extends Controller{
+public class UserGroupController extends Controller {
 
-	private final UserGroupRepository userGroupRepository;
+    private final UserGroupRepository userGroupRepository;
+    private final UserRepository userRepository;
 
-	// We are using constructor injection to receive a repository to support our
-	// desire for immutability.
-	@Inject
-	public UserGroupController(final UserGroupRepository userGroupRepository) {
-		this.userGroupRepository = userGroupRepository;
-	}
+    // We are using constructor injection to receive a repository to support our
+    // desire for immutability.
+    @Inject
+    public UserGroupController(final UserGroupRepository userGroupRepository,
+                               final UserRepository userRepository) {
+        this.userGroupRepository = userGroupRepository;
+        this.userRepository = userRepository;
+    }
 
-	public Result getAllGroups(String format) {
-		Iterable<UserGroup> groupIterable = userGroupRepository.findAll();
-		List<UserGroup> groupList = new ArrayList<UserGroup>();
-		for (UserGroup group : groupIterable) {
-			groupList.add(group);
-		}
-		String result = new String();
-		if (format.equals("json")) {
-			result = new Gson().toJson(groupList);
-		}
-		return ok(result);
-	}
+    public Result getAllGroups(String format) {
+        Iterable<UserGroup> groupIterable = userGroupRepository.findAll();
+        List<UserGroup> groupList = new ArrayList<UserGroup>();
+        for (UserGroup group : groupIterable) {
+            groupList.add(group);
+        }
+        String result = new String();
+        if (format.equals("json")) {
+            result = new Gson().toJson(groupList);
+        }
+        return ok(result);
+    }
 
 // 	public Result getPageWorkflows(String format, int page, int size) {
 
@@ -95,7 +91,7 @@ public class UserGroupController extends Controller{
 // 		return ok(new Gson().toJson(workflowResult));
 // 		// return ok(result.toString());
 // 	}
-	
+
 // 	public Result getWorkflowByAuthorId(int id) {
 // 		List<Workflow> result = workflowRepository.findByAuthorId(id);
 // 		String workflow = new Gson().toJson(result);
@@ -107,6 +103,62 @@ public class UserGroupController extends Controller{
 // 		rtn.addProperty("numEntry", workflowRepository.count());
 // 		return ok(rtn.toString());
 // 	}
+
+    // Add user group. First test if a group exists with this name.
+    // If not, add. Otherwise, don't add.
+    public Result addUserGroup(String groupName, long authorId) {
+        List<UserGroup> groupWithSameName = userGroupRepository
+                .findByGroupName(groupName);
+        if (!groupWithSameName.isEmpty()) {
+            System.out.println("Group with this name exists. Group not " +
+                    "created.");
+            return badRequest("Group with this name exists. Group not created" +
+                    ".");
+        }
+        try {
+            String author = userRepository.findById(authorId).getUserName();
+            UserGroup newGroup = new UserGroup(author, groupName, authorId);
+            // Author is by default administrator.
+            newGroup.getAdminList().add(userRepository.findById(authorId));
+            userGroupRepository.save(newGroup);
+            System.out.println("UserGroup saved: " + newGroup.getId());
+            return created(new Gson().toJson(newGroup.getId()));
+        } catch (PersistenceException pe) {
+            pe.printStackTrace();
+            System.out.println("UserGroup not saved: ");
+            return badRequest("UserGroup not saved: ");
+        }
+    }
+
+    public Result addAdminToGroup(long groupId, long userId) {
+        try {
+            UserGroup targetGroup = userGroupRepository.findById(groupId);
+            User thisUser =  userRepository.findById(userId);
+            System.out.println("##########admin list size:" + targetGroup
+                    .getAdminList().size());
+            if (targetGroup.getAdminList().contains(thisUser)) {
+                System.out.println("User not added as admin. Already admin.");
+                return badRequest("User not added as admin. Already admin.");
+            }
+            if (targetGroup.getMemberList().contains(thisUser)) {
+                targetGroup.getMemberList().remove(thisUser);
+                targetGroup.getAdminList().add(thisUser);
+                System.out.println(userId + " has been promoted to admin in " +
+                        "group " + groupId);
+            } else {
+                targetGroup.getAdminList().add(thisUser);
+                System.out.println(userId + "has been added to group " +
+                        groupId + " as admin");
+            }
+
+            System.out.println("##########admin list size after adding:" +
+                    targetGroup.getAdminList().size());
+            userGroupRepository.save(targetGroup);
+            return created("Success");
+        } catch (Exception e) {
+            return badRequest("User Not set as admin");
+        }
+    }
 
 // 	public Result addWorkflow() {
 // 		JsonNode json = request().body().asJson();
@@ -134,7 +186,7 @@ public class UserGroupController extends Controller{
 // 	    String climateServiceIdSet = json.path("climateServiceSet").asText();
 // 	    int isQuestion = json.path("isQuestion").asInt();
 // 	    int answerId = 0; //json.path("answerId").asInt();
-	    
+
 // 	    List<String> userIdList = Arrays.asList(userIdSet.split("\\s*,\\s*"));
 // 	    List<String> climateServiceIdList = Arrays.asList(climateServiceIdSet.split("\\s*,\\s*"));
 
@@ -177,14 +229,14 @@ public class UserGroupController extends Controller{
 // 		System.out.println("Workflow is deleted: " + id);
 // 		return ok("Workflow is deleted: " + id);
 // 	}
-	
+
 // 	public Result markAnswer(){
 // 		JsonNode json = request().body().asJson();
 // 		if (json == null) {
 // 			System.out.println("Workflow not created, expecting Json data");
 // 			return badRequest("Workflow not created, expecting Json data");
 // 		}
-		
+
 // 		long workflowId = json.path("workflowId").asLong();
 // 		int commentId = json.path("commentId").asInt();
 // 		Workflow w = workflowRepository.findOne(workflowId);

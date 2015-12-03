@@ -23,22 +23,24 @@
     <table class="table forum table-striped">
         <thead>
             <tr>
-                <th class="cell-stat"></th>
-                <th >
-                  <h3>Group</h3>
+                <th class="cell-stat">Group ID</th>
+                <th>
+                  <h3>GroupName</h3>
                 </th>
-                <th class="cell-stat text-center hidden-xs hidden-sm">GroupName</th>
-                <th class="cell-stat text-center hidden-xs hidden-sm">Author</th>
+                <th class="cell-stat text-center hidden-xs hidden-sm">AuthorId</th>
+                <th class="cell-stat text-center hidden-xs hidden-sm">Members</th>
             </tr>
         </thead>
 
         <tbody>
             @for(group <- groups){
             <tr>
+                <td>@group.getId</td>
                 <td>
                     <h4><a href="/workflow/@group.getId()">@group.getGroupName() </a></h4>
                 </td>
                 <td class="text-center hidden-xs hidden-sm"><a href="/userProfile/@group.getAuthorId()">@group.getAuthor()</a></td>
+                <td>@group.getAdminList().size() Admin<br> @group.getMemberList.size() Member</td>
             </tr>
             }
 

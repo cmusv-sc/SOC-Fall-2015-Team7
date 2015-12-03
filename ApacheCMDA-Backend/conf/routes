@@ -15,7 +15,8 @@ GET             /subscription/subscribeToUser/id/:id/target/:target             
 
 # Group
 GET             /group/getAllGroups/json					@controllers.UserGroupController.getAllGroups(format: String="json")
-
+GET             /group/createNewGroup/name/:groupName/creatorId/:id            @controllers.UserGroupController.addUserGroup(groupName: String, id: Long)
+GET             /group/addAdminToGroup/groupId/:groupId/userId/:userId       @controllers.UserGroupController.addAdminToGroup(groupId: Long, userId: Long)
 # Workflow
 GET		  		/workflow/getAllWorkflows/json				@controllers.WorkflowController.getAllWorkflows(format: String="json")
 GET		  		/workflow/getPageWorkflows/json				@controllers.WorkflowController.getPageWorkflows(format: String="json", page: Int?=1, size: Int?=10)										

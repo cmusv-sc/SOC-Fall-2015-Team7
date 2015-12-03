@@ -42,12 +42,17 @@ public class UserGroup {
 
 	//	private long rootWorkflowId;
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
+	@JoinTable(name = "UserGroup_AdminUser", joinColumns = { @JoinColumn(name
+			="userGroupId", referencedColumnName = "id")}, inverseJoinColumns
+			= { @JoinColumn(name = "userId", referencedColumnName = "id") })
 	private List<User> adminList;
-	
+
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
-	@JoinTable(name = "WorkflowAndClimateService", joinColumns = { @JoinColumn(name ="workflowId", referencedColumnName = "id")}, inverseJoinColumns = { @JoinColumn(name = "climateServiceId", referencedColumnName = "id") })
+	@JoinTable(name = "UserGroup_MemberUser", joinColumns = { @JoinColumn(name
+			="userGroupId", referencedColumnName = "id")}, inverseJoinColumns
+			= { @JoinColumn(name = "userId", referencedColumnName = "id") })
 	private List<User> memberList;
-	
+
 	public UserGroup() {
 	}
 	

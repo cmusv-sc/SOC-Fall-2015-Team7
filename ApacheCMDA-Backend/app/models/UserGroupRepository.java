@@ -27,6 +27,7 @@ import javax.inject.Singleton;
 @Singleton
 public interface UserGroupRepository extends PagingAndSortingRepository<UserGroup, Long> {
 
-	List<UserGroup> findById(long id);
+	UserGroup findById(long id);
 	List<UserGroup> findByAuthorId(long id);
+	List<UserGroup> findByGroupName(String groupName);
 }

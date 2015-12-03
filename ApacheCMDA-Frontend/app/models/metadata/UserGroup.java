@@ -45,6 +45,8 @@ public class UserGroup {
 	private static final String GET_ALL_GROUP_CALL = Constants.NEW_BACKEND+"group/getAllGroups/json";
 	
 	public UserGroup() {
+        this.adminList = new ArrayList<>();
+        this.memberList = new ArrayList<>();
 	}
 	
 	public UserGroup(long id, String author, String groupName, long authorId) {
@@ -53,8 +55,8 @@ public class UserGroup {
 		this.author = author;
 		this.groupName = groupName;
 		this.authorId = authorId;
-		// this.adminList = new ArrayList<>();
-		// this.memberList = new ArrayList<>();
+        this.adminList = new ArrayList<>();
+        this.memberList = new ArrayList<>();
 	}
 
     public List<User> getAdminList() {
@@ -104,58 +106,6 @@ public class UserGroup {
     public void setMemberList(List<User> memberList) {
         this.memberList = memberList;
     }
-//	public long getId() {
-//		return this.id;
-//	}
-//
-//	public void setId(long id) {
-//		this.id = id;
-//	}
-//
-//	public String getGroupName() {
-//		return groupName;
-//	}
-//
-//	public void setGroupName(String groupName) {
-//		this.groupName = groupName;
-//	}
-//
-//	public String getAuthor() {
-//		return author;
-//	}
-//
-//	public void setAuthor(String author) {
-//		this.author = author;
-//	}
-//
-//	public long getAuthorId() {
-//		return authorId;
-//	}
-//
-//	public void setAuthorId(long id) {
-//		this.authorId = id;
-//	}
-//
-//	// public List<User> getAdminList() {
-//	// 	return adminList;
-//	// }
-//
-//	// public List<User> getMemberList() {
-//	// 	return memberList;
-//	// }
-//
-//	public void setAdminList(String adminList) {
-//		this.adminList = adminList;
-//	}
-//	public void setMemberList(String memberList) {
-//		this.memberList = memberList;
-//	}
-//	public String getAdminList() {
-//		return this.adminList;
-//	}
-//	public String getMemberList() {
-//		return this.memberList;
-//	}
 
 	public static List<UserGroup> all() {
 		List<UserGroup> groups = new ArrayList<UserGroup>();
@@ -171,6 +121,12 @@ public class UserGroup {
 			JsonNode json = jsonNode.path(i);
 			UserGroup newGroup = new UserGroup(json.path("id").asLong(), json.path("author").asText(), 
 				json.path("groupName").asText(), json.path("authorId").asLong());
+            List<User> adminList = new ArrayList<>();
+            Gson gson = new Gson();
+            for (int j= 0; j < json.path("adminList").size();j++)
+                 adminList.add(gson.fromJson(json.path("adminList").get(j).toString(), User.class));
+            newGroup.setAdminList(adminList);
+
 			groups.add(newGroup);
 		}
 		

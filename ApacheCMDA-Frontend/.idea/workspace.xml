@@ -2,166 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f403282-dc62-4658-88db-575f4b2c288b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/IdeaProject.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/codeStyleSettings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/highlighting.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__antlr_antlr_2_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__cglib_cglib_nodep_2_1_3_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__ch_qos_logback_logback_classic_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__ch_qos_logback_logback_core_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_fasterxml_classmate_1_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_annotations_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_core_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_databind_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_google_code_findbugs_jsr305_2_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_google_code_gson_gson_2_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_google_guava_guava_16_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_mchange_c3p0_0_9_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_mchange_mchange_commons_java_0_2_3_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_ning_async_http_client_1_8_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_novocode_junit_interface_0_11_RC1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_akka_akka_actor_2_11_2_3_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_akka_akka_slf4j_2_11_2_3_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_config_1_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_netty_netty_http_pipelining_1_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_build_link_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_cache_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_datacommons_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_exceptions_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_functional_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_iteratees_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_java_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_java_ws_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_json_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_test_2_11_2_3_7_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_play_ws_2_11_2_3_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__com_typesafe_play_twirl_api_2_11_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__commons_codec_commons_codec_1_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__commons_collections_commons_collections_3_2_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__commons_io_commons_io_2_2_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__io_netty_netty_3_9_3_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__javax_inject_javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__javax_transaction_jta_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__joda_time_joda_time_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__junit_junit_4_11_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__mysql_mysql_connector_java_5_1_34.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_java_dev_jna_jna_3_4_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_java_dev_jna_platform_3_4_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_sf_ehcache_ehcache_core_2_6_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_sourceforge_cssparser_cssparser_0_9_11_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_sourceforge_htmlunit_htmlunit_2_13_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_sourceforge_htmlunit_htmlunit_core_js_2_13_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__net_sourceforge_nekohtml_nekohtml_1_9_19_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__oauth_signpost_signpost_commonshttp4_1_2_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__oauth_signpost_signpost_core_1_2_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_commons_commons_exec_1_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_httpcomponents_httpclient_4_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_httpcomponents_httpclient_4_3_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_httpcomponents_httpcore_4_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_httpcomponents_httpcore_4_3_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_httpcomponents_httpmime_4_3_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_apache_tomcat_tomcat_servlet_api_8_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_aspectj_aspectjrt_1_8_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_easytesting_fest_assert_1_4_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_easytesting_fest_util_1_1_6_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_eclipse_jetty_jetty_http_8_1_12_v20130726_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_eclipse_jetty_jetty_io_8_1_12_v20130726_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_eclipse_jetty_jetty_util_8_1_12_v20130726_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_eclipse_jetty_jetty_websocket_8_1_12_v20130726_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_fluentlenium_fluentlenium_core_0_9_2_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_fluentlenium_fluentlenium_festassert_0_9_2_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hamcrest_hamcrest_core_1_3_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_hibernate_c3p0_4_3_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_hibernate_core_4_3_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_hibernate_entitymanager_4_3_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_hibernate_validator_5_0_3_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_javassist_javassist_3_18_2_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_jboss_jandex_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_jboss_logging_jboss_logging_3_2_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_joda_joda_convert_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_json_json_20080701_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_mockito_mockito_core_1_10_19_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_objenesis_objenesis_2_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_reflections_reflections_0_9_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_lang_modules_scala_parser_combinators_2_11_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_lang_modules_scala_xml_2_11_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_lang_scala_compiler_2_11_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_lang_scala_reflect_2_11_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_sbt_test_interface_1_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scala_stm_scala_stm_2_11_0_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scalaz_scalaz_concurrent_2_11_7_0_6_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scalaz_scalaz_core_2_11_7_0_6_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_scalaz_scalaz_effect_2_11_7_0_6_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_android_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_api_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_chrome_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_firefox_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_htmlunit_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_ie_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_iphone_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_java_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_remote_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_safari_driver_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_seleniumhq_selenium_selenium_support_2_39_0_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_slf4j_jcl_over_slf4j_1_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_slf4j_jul_to_slf4j_1_7_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_slf4j_slf4j_api_1_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_classycle_1_4_3_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_analysis_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_common_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_core_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_junit_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_matcher_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_matcher_extra_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_specs2_specs2_mock_2_11_2_3_12_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_data_spring_data_commons_1_9_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_data_spring_data_jpa_1_7_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_aop_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_beans_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_context_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_core_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_expression_4_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_jdbc_4_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_orm_4_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_springframework_spring_tx_4_0_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_w3c_css_sac_1_3_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_webbitserver_webbit_0_4_14_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__org_yaml_snakeyaml_1_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__scala_2_10_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__xalan_serializer_2_7_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__xalan_xalan_2_7_1_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__xerces_xercesImpl_2_11_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/libraries/SBT__xml_apis_xml_apis_1_4_01.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/projectCodeStyle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/uiDesigner.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/db.h2.db" afterPath="$PROJECT_DIR$/data/db.h2.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/modules.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/scala_compiler.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/scala_compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/controllers/UserGroupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/User.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserGroup.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserGroupRepository.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserGroupRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserRepository.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/app/models/UserRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/conf/routes" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/db.lock.db" afterPath="$PROJECT_DIR$/data/db.lock.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/metadata/UserGroup.java" afterPath="$PROJECT_DIR$/app/models/metadata/UserGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/climate/header.scala.html" afterPath="$PROJECT_DIR$/app/views/climate/header.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/climate/userGroups.scala.html" afterPath="$PROJECT_DIR$/app/views/climate/userGroups.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" afterPath="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" />
     </list>
     <ignored path="ApacheCMDA-Frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -196,129 +49,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="twoDimSlice3D.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/twoDimSlice3D.html">
+      <file leaf-file-name="userGroups.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/climate/userGroups.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="425" column="55" selection-start-line="425" selection-start-column="55" selection-end-line="425" selection-end-column="55" />
+            <state vertical-scroll-proportion="-20.0">
+              <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twoDimTimeSeries.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/twoDimTimeSeries.html">
+      <file leaf-file-name="UserGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/metadata/UserGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="531" column="55" selection-start-line="531" selection-start-column="55" selection-end-line="531" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="twoDimZonalMean.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/twoDimZonalMean.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="685" column="55" selection-start-line="685" selection-start-column="55" selection-end-line="685" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conditionalSampling.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conditionalSampling2Var.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling2Var.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correlationMap.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/html/correlationMap.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="50" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/util/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+            <state vertical-scroll-proportion="-13.777778">
+              <caret line="129" column="33" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="33" />
               <folding>
-                <element signature="e#0#2386#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2749#2750#0" expanded="true" />
+                <element signature="e#2793#2794#0" expanded="true" />
+                <element signature="e#2875#2886#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="routes" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/META-INF/persistence.xml">
+      <file leaf-file-name="header.scala.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/climate/header.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.63131315">
+              <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserGroup.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/metadata/UserGroup.java">
+      <file leaf-file-name="Workflow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/metadata/Workflow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2966507">
-              <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+            <state vertical-scroll-proportion="-9.444445">
+              <caret line="236" column="51" selection-start-line="233" selection-start-column="8" selection-end-line="236" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1837#1838#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
-                <element signature="e#1933#1934#0" expanded="true" />
-                <element signature="e#1960#1961#0" expanded="true" />
-                <element signature="e#1990#1991#0" expanded="true" />
-                <element signature="e#2024#2025#0" expanded="true" />
-                <element signature="e#2052#2053#0" expanded="true" />
-                <element signature="e#2085#2086#0" expanded="true" />
-                <element signature="e#2119#2120#0" expanded="true" />
-                <element signature="e#2163#2164#0" expanded="true" />
-                <element signature="e#2199#2200#0" expanded="true" />
-                <element signature="e#2235#2236#0" expanded="true" />
-                <element signature="e#2272#2273#0" expanded="true" />
-                <element signature="e#2322#2323#0" expanded="true" />
-                <element signature="e#2364#2365#0" expanded="true" />
-                <element signature="e#2397#2398#0" expanded="true" />
-                <element signature="e#2433#2434#0" expanded="true" />
-                <element signature="e#2479#2480#0" expanded="true" />
-                <element signature="e#2519#2520#0" expanded="true" />
-                <element signature="e#2560#2561#0" expanded="true" />
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2654#2655#0" expanded="true" />
-                <element signature="e#2698#2699#0" expanded="true" />
-                <element signature="e#3771#3782#0" expanded="true" />
+                <element signature="e#1750#1751#0" expanded="true" />
+                <element signature="e#1775#1776#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -337,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/climate/header.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/AccountController.java" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/controllers/ClimateServiceController.java" />
@@ -355,7 +137,11 @@
         <option value="$PROJECT_DIR$/public/html/conditionalSampling.html" />
         <option value="$PROJECT_DIR$/public/html/conditionalSampling2Var.html" />
         <option value="$PROJECT_DIR$/app/util/Constants.java" />
+        <option value="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
+        <option value="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/climate/userGroups.scala.html" />
         <option value="$PROJECT_DIR$/app/models/metadata/UserGroup.java" />
+        <option value="$PROJECT_DIR$/app/views/climate/header.scala.html" />
       </list>
     </option>
   </component>
@@ -365,10 +151,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="y" value="23" />
-    <option name="width" value="1234" />
-    <option name="height" value="777" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -455,34 +239,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -502,6 +258,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="climate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,6 +355,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApacheCMDA-Frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -570,6 +384,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1044,16 +859,16 @@
       <updated>1442535929847</updated>
       <workItem from="1442535930417" duration="1462000" />
       <workItem from="1442616005375" duration="4511000" />
-      <workItem from="1449107542464" duration="1332000" />
+      <workItem from="1449107542464" duration="3756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7305000" />
+    <option name="totallyTimeSpent" value="9729000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="23" width="1234" height="777" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1064,7 +879,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.240625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1175,6 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,6 +1006,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+          <folding>
+            <element signature="e#1823#1824#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#6589#6590#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,13 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/climate/header.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1233,6 +1050,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,6 +1058,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,6 +1066,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,18 +1077,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="109" selection-start-line="32" selection-start-column="103" selection-end-line="32" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ClimateServiceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.259259">
           <caret line="194" column="5" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+          <folding>
+            <element signature="e#1823#1824#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#6589#6590#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1276,6 +1096,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="914" column="54" selection-start-line="914" selection-start-column="54" selection-end-line="914" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1283,6 +1104,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="204" column="55" selection-start-line="204" selection-start-column="55" selection-end-line="204" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,6 +1112,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="203" column="55" selection-start-line="203" selection-start-column="55" selection-end-line="203" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,6 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="919" column="55" selection-start-line="919" selection-start-column="55" selection-end-line="919" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,6 +1128,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="423" column="55" selection-start-line="423" selection-start-column="55" selection-end-line="423" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,6 +1136,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.627451">
           <caret line="447" column="55" selection-start-line="447" selection-start-column="55" selection-end-line="447" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,45 +1164,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/twoDimZonalMean.html">
+    <entry file="file://$PROJECT_DIR$/conf/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="685" column="55" selection-start-line="685" selection-start-column="55" selection-end-line="685" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.26666668">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling2Var.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/correlationMap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="50" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#2386#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1388,45 +1180,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/META-INF/persistence.xml">
+    <entry file="file://$PROJECT_DIR$/app/util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5064378">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#2386#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/correlationMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022222223">
+          <caret line="83" column="50" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling2Var.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022222223">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022222223">
+          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/html/twoDimZonalMean.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="685" column="55" selection-start-line="685" selection-start-column="55" selection-end-line="685" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19313304">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/userProfile.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46692607">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84821427">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/userGroups.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/metadata/Workflow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.444445">
+          <caret line="236" column="51" selection-start-line="233" selection-start-column="8" selection-end-line="236" selection-end-column="51" />
+          <folding>
+            <element signature="e#1750#1751#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/metadata/UserGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2966507">
-          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+        <state vertical-scroll-proportion="-13.777778">
+          <caret line="129" column="33" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2024#2025#0" expanded="true" />
-            <element signature="e#2052#2053#0" expanded="true" />
-            <element signature="e#2085#2086#0" expanded="true" />
-            <element signature="e#2119#2120#0" expanded="true" />
-            <element signature="e#2163#2164#0" expanded="true" />
-            <element signature="e#2199#2200#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2272#2273#0" expanded="true" />
-            <element signature="e#2322#2323#0" expanded="true" />
-            <element signature="e#2364#2365#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2479#2480#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2560#2561#0" expanded="true" />
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-            <element signature="e#3771#3782#0" expanded="true" />
+            <element signature="e#2749#2750#0" expanded="true" />
+            <element signature="e#2793#2794#0" expanded="true" />
+            <element signature="e#2875#2886#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/header.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63131315">
+          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>

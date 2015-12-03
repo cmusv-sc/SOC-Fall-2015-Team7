@@ -22,11 +22,12 @@ public class UserGroupController extends Controller {
 	final static Form<UserGroup> groupForm = Form.form(UserGroup.class);
 
 	public static Result home() {
+//		return ok(views.html.climate.userGroups.render(UserGroup.all()));
 		return ok(userGroups.render(UserGroup.all()));
 	}
 
 	// public static Result home(int page) {
-	// 	return ok(forum.render(Workflow.page(page), page, Workflow.getNumPage()));
+//	 	return ok(forum.render(Workflow.page(page), page, Workflow.getNumPage()));
 	// }
 
 	// public static Result workflow(long id) {
