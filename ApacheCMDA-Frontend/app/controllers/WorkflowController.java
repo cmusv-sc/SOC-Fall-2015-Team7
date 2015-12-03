@@ -9,7 +9,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import models.metadata.Workflow;
+import models.metadata.Comment;
 import play.data.Form;
+import play.data.DynamicForm;
 import play.libs.Json;
 import play.mvc.*;
 import play.mvc.Http.MultipartFormData;
@@ -26,7 +28,7 @@ public class WorkflowController extends Controller {
 	}
 
 	public static Result workflow(long id) {
-		return ok(workflow.render(Workflow.one(id), null));
+		return ok(workflow.render(Workflow.one(id), Comment.getComment(id)));
 	}
 
 	public static Result addWorkflow() {
@@ -72,4 +74,26 @@ public class WorkflowController extends Controller {
         Workflow tmp = Workflow.one(id);
         return ok(tmp.getImage()).as("image/png");
     }
+
+    public static Result newComment() {
+	    DynamicForm df = Form.form().bindFromRequest();
+	    ObjectNode jsonData = Json.newObject();
+	    try {
+	        jsonData.put("username", "testName");
+	        jsonData.put("userid" , 2333);
+	        jsonData.put("replytoid" , df.get("replytoid"));
+	        jsonData.put("workflowid" , df.get("workflowid"));
+	        System.out.println("workflow id to add: "+ df.get("workflowid"));
+	        jsonData.put("comment" , df.get("comment"));
+	        Comment.addComment(jsonData);
+	    } catch (IllegalStateException e) {
+	        e.printStackTrace();
+	        Application.flashMsg(APICall
+                    .createResponse(ResponseType.CONVERSIONERROR));
+	    } catch (Exception e) {
+            e.printStackTrace();
+            Application.flashMsg(APICall.createResponse(ResponseType.UNKNOWN));
+        }
+	    return redirect("/workflow/" + df.get("workflowid"));
+	}
 }

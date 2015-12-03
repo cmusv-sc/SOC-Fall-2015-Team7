@@ -104,9 +104,11 @@
 
                 <div class="well">
                     <h4>Leave a Comment:</h4>
-                    <form role="form">
+                    <form method="post" action="/workflow/newComment" role="form">
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="comment"></textarea>
+                            <input type="hidden" name="replytoid" value="@workflow.getAuthorId()">
+                            <input type="hidden" name="workflowid" value="@workflow.getId()">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -114,27 +116,33 @@
 
                 <hr>
 
+                @for(oneComment <- comments){
                 <div class="well">
                     <div>
-                        <h4>User
-                            <small>August 25, 2014 at 9:30 PM</small>
+                        <h4> @oneComment.getUsername()
+                            <small>@oneComment.getDate()</small>
                         </h4>
-                        <p>123 </p>
+                        <p>  @oneComment.getComment() </p>
                     </div>
 
-                    <button class="btn btn-primary" data-toggle="collapse" data-target="#reply1">Reply</button>
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="@{"#" + oneComment.getId()}">Reply</button>
 
-                    <div id="reply1" class="collapse">
-                        <h4>Reply:</h4>
-                        <form role="form">
+                    <div id="@oneComment.getId()" class="collapse">
+                        <h4>Reply: @session.get("userName")</h4>
+                        <form method="post" action="/workflow/newComment" role="form">
                             <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name="comment"></textarea>
+                                <input type="hidden" name="replytoid" value="@oneComment.getUserid()">
+                                <input type="hidden" name="workflowid" value="@workflow.getId()">
+                     
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
 
                 </div>
+                }
+
 
             </div> <!-- cols-8 end -->
 

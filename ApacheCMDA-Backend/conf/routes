@@ -68,3 +68,8 @@ DELETE		  /users/delete/userName/:userName/password/:password										@controll
 
 # Map static resources from the /public folder to the /assets URL path
 GET           /assets/*file                                                                             controllers.Assets.at(path="/public", file)
+
+# My test router for comment
+GET           /comment/test                                                                             @controllers.CommentController.testCommentFunction
+POST          /comment/add                                                                             	@controllers.CommentController.addComment
+GET           /comment/getbyworkflowid/:id                                                          	@controllers.CommentController.getComment(id: Long, format: String="json")
