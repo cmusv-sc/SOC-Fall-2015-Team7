@@ -147,10 +147,15 @@ public class UserGroup {
 			UserGroup newGroup = new UserGroup(json.path("id").asLong(), json.path("author").asText(), 
 				json.path("groupName").asText(), json.path("authorId").asLong());
             List<User> adminList = new ArrayList<>();
+            List<User> memberList = new ArrayList<>();
             Gson gson = new Gson();
             for (int j= 0; j < json.path("adminList").size();j++)
                  adminList.add(gson.fromJson(json.path("adminList").get(j).toString(), User.class));
             newGroup.setAdminList(adminList);
+
+            for (int j= 0; j < json.path("memberList").size();j++)
+                memberList.add(gson.fromJson(json.path("memberList").get(j).toString(), User.class));
+            newGroup.setMemberList(memberList);
 
 			groups.add(newGroup);
 		}

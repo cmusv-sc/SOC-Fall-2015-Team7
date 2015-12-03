@@ -19,6 +19,10 @@
 @import helper._
 
 @main("Group Info") {
+  @if(session.get("id") == null) {
+    <h3>Please log in first to view group info.</h3>
+    <h4><a href="/climate">Get back</h4>
+  } else {
   <h3>Group Name: </h3><p>@group.getGroupName()</p>
   <h3>Group Creator: </h3><p href="/user">@group.getAuthor()</p>
   <h3>Group Members:</h3>
@@ -61,4 +65,6 @@
       </div>
     }
   }
+  }
 }
+

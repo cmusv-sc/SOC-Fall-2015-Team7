@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb097e0-8d03-4bae-ae3c-71025267f570" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroup.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/controllers/UserGroupController.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/controllers/UserGroupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/models/metadata/UserGroup.java" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/models/metadata/UserGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/error.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/error.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroup.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroup.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroups.scala.html" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/app/views/climate/userGroups.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Frontend/conf/routes" afterPath="$PROJECT_DIR$/../ApacheCMDA-Frontend/conf/routes" />
     </list>
     <ignored path="$PROJECT_DIR$/target/native_libraries/" />
     <ignored path="$PROJECT_DIR$/target/resolution-cache/" />
@@ -770,12 +765,12 @@
       <created>1449107090342</created>
       <option name="number" value="Default" />
       <updated>1449107090342</updated>
-      <workItem from="1449107135611" duration="8822000" />
+      <workItem from="1449107135611" duration="9019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8822000" />
+    <option name="totallyTimeSpent" value="9019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
