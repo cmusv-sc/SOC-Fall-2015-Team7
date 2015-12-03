@@ -47,11 +47,12 @@ public class CommentController extends Controller
         long replytoid = json.findPath("replytoid").asLong();
         long workflowid = json.findPath("workflowid").asLong();
         String comment = json.findPath("comment").asText();
+        String replytoname = json.findPath("replytoname").asText();
         Date date = new Date();
 
         try
         {
-            Comment newComment = new Comment(username,userid,replytoid, workflowid, comment, date);
+            Comment newComment = new Comment(username,userid,replytoid, replytoname, workflowid, comment, date);
             Comment savedComment = commentRepository.save(newComment);
             System.out.println("Comment saved: " + savedComment.getId());
             return created(new Gson().toJson(savedComment.getId()));

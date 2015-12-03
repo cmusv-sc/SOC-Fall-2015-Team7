@@ -109,6 +109,9 @@
                             <textarea class="form-control" rows="3" name="comment"></textarea>
                             <input type="hidden" name="replytoid" value="@workflow.getAuthorId()">
                             <input type="hidden" name="workflowid" value="@workflow.getId()">
+                            <input type="hidden" name="username" value="@session.get("userName")">
+                            <input type="hidden" name="userid" value="@session.get("id")">
+                            <input type="hidden" name="replytoname" value="@workflow.getAuthor()">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -122,19 +125,21 @@
                         <h4> @oneComment.getUsername()
                             <small>@oneComment.getDate()</small>
                         </h4>
-                        <p>  @oneComment.getComment() </p>
+                        <p>  Reply to @oneComment.getReplytoname(): <br>@oneComment.getComment() </p>
                     </div>
 
                     <button class="btn btn-primary" data-toggle="collapse" data-target="@{"#" + oneComment.getId()}">Reply</button>
 
                     <div id="@oneComment.getId()" class="collapse">
-                        <h4>Reply: @session.get("userName")</h4>
+                        <h4>Reply: </h4>
                         <form method="post" action="/workflow/newComment" role="form">
                             <div class="form-group">
                                 <textarea class="form-control" rows="3" name="comment"></textarea>
                                 <input type="hidden" name="replytoid" value="@oneComment.getUserid()">
                                 <input type="hidden" name="workflowid" value="@workflow.getId()">
-                     
+                                <input type="hidden" name="username" value="@session.get("userName")">
+                                <input type="hidden" name="userid" value="@session.get("id")">
+                                <input type="hidden" name="replytoname" value="@oneComment.getUsername()">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

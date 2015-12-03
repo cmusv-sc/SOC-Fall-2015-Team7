@@ -22,6 +22,7 @@ public class Comment {
 	private String username;
 	private long userid;
 	private long replytoid;
+    private String replytoname;
 	private long workflowid;
 	//@Column(columnDefinition="TEXT")
 	private String comment;
@@ -31,7 +32,7 @@ public class Comment {
 	}
 
 	public Comment(String username, long userid,
-		long replytoid, long workflowid, String comment, Date date) {
+		long replytoid, String replytoname, long workflowid, String comment, Date date) {
 		super();
 		this.userid = userid;
 		this.username = username;
@@ -39,6 +40,7 @@ public class Comment {
 		this.workflowid = workflowid;
 		this.comment = comment;
 		this.date = date;
+        this.replytoname = replytoname;
 	}
 
     public long getId() {
@@ -59,6 +61,14 @@ public class Comment {
 
     public void setReplytoid(long replytoid) {
         this.replytoid = replytoid;
+    }
+
+    public String getReplytoname() {
+        return replytoname;
+    }
+
+    public void setReplytoname(String replytoname) {
+        this.replytoname = replytoname;
     }
 
     public long getWorkflowid() {

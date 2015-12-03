@@ -79,10 +79,11 @@ public class WorkflowController extends Controller {
 	    DynamicForm df = Form.form().bindFromRequest();
 	    ObjectNode jsonData = Json.newObject();
 	    try {
-	        jsonData.put("username", "testName");
-	        jsonData.put("userid" , 2333);
+	        jsonData.put("username", df.get("username"));
+	        jsonData.put("userid" , df.get("userid"));
 	        jsonData.put("replytoid" , df.get("replytoid"));
 	        jsonData.put("workflowid" , df.get("workflowid"));
+	        jsonData.put("replytoname", df.get("replytoname"));
 	        System.out.println("workflow id to add: "+ df.get("workflowid"));
 	        jsonData.put("comment" , df.get("comment"));
 	        Comment.addComment(jsonData);
