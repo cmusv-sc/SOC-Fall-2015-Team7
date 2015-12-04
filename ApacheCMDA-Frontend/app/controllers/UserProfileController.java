@@ -15,14 +15,35 @@ import play.libs.Json;
 import play.mvc.*;
 import util.APICall;
 import util.APICall.ResponseType;
+import util.Constants;
 import views.html.climate.*;
 
 
 public class UserProfileController extends Controller {
-	
+	private static final String GET_ONE_USER_CALL_TO_BACKEND = Constants.NEW_BACKEND+"users/";
+
 	public static Result getUserProfile(Long userID) {
 		return ok(userProfile.render(User.one(userID), User.getUserWorkflows(userID)));
 	}
+
+	public static Result getUserInfo(Long id) {
+		JsonNode json = null;
+
+
+		try {
+			json = APICall.callAPI(GET_ONE_USER_CALL_TO_BACKEND+String.valueOf(id));
+		}catch (IllegalStateException e) {
+			e.printStackTrace();
+			Application.flashMsg(APICall
+					.createResponse(ResponseType.CONVERSIONERROR));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Application.flashMsg(APICall
+					.createResponse(ResponseType.UNKNOWN));
+		}
+		return ok(json);
+	}
+
 	// public static Result home(int page) {
 	// 	return ok(forum.render(Workflow.page(page), page, Workflow.getNumPage()));
 	// }
