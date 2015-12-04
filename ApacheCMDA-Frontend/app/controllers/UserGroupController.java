@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import models.metadata.UserGroup;
+import models.metadata.User;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.*;
@@ -28,7 +29,23 @@ public class UserGroupController extends Controller {
 	}
 
 	public static Result group(long id) {
+        boolean a = group(id, 111);
+        System.out.println(a);
 		return ok(userGroup.render(UserGroup.one(id), groupForm));
+	}
+
+	public static boolean group(long id, long userId) {
+        UserGroup ug = UserGroup.one(id);
+        for (User u : ug.getMemberList()) {
+            if (u.getId() == userId)
+                return true;
+        }
+
+        for (User u : ug.getAdminList()) {
+            if (u.getId() == userId)
+                return true;
+        }
+        return false;
 	}
 
 	public static Result newAdmin(Long groupId) {
@@ -154,7 +171,7 @@ public class UserGroupController extends Controller {
 	// 	}
 	// 	return redirect("/workflow/new/workflow");
 	// }
-	
+
  //    public static Result getImage(long id) {
  //        Workflow tmp = Workflow.one(id);
  //        return ok(tmp.getImage()).as("image/png");

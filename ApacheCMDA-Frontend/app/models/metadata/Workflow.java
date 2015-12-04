@@ -38,6 +38,16 @@ public class Workflow {
 	private List<String> datasetList;
 	private List<String> otherWorkflowsList;
 	private List<String> climateServiceSetList;
+	private List<String> usersetList;
+
+	public List<String> getUsersetList() {
+		return usersetList;
+	}
+
+	public void setUsersetList(List<String> list) {
+		this.usersetList = new ArrayList<String>();
+		this.usersetList.addAll(list);
+	}
 
 	public List<String> getClimateServiceSetList() {
 		return climateServiceSetList;
@@ -47,7 +57,7 @@ public class Workflow {
 		this.climateServiceSetList = new ArrayList<String>();
 		this.climateServiceSetList.addAll(climateServiceSetStr);
 	}
-	
+
 	public List<String> getDatasetList() {
 		return datasetList;
 	}
@@ -81,7 +91,7 @@ public class Workflow {
 	public void setOutput(String output) {
 		this.output = output;
 	}
-	
+
 	public String getAuthor() {
 		return author;
 	}
@@ -171,22 +181,22 @@ public class Workflow {
 				|| !workflowsNode.isArray()) {
 			return workflows;
 		}
-		
+
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
 			newWorkflow.setId(json.path("id").asLong());
 			newWorkflow.setName(json.get("name").asText());
 			newWorkflow.setPurpose(json.path("purpose").asText());
-			
+
 			newWorkflow.setCreateTime(json.path("createTime").asText());
 			newWorkflow.setVersionNo(json.path("versionNo").asText());
 			workflows.add(newWorkflow);
 		}
-		
+
 		return workflows;
 	}
-	
+
 	public static List<Workflow> page(int page) {
 		List<Workflow> workflows = new ArrayList<Workflow>();
 		JsonNode workflowsNode;
@@ -195,7 +205,7 @@ public class Workflow {
 				|| !workflowsNode.isArray()) {
 			return workflows;
 		}
-		
+
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
@@ -210,7 +220,7 @@ public class Workflow {
 		}
 		return workflows;
 	}
-	
+
 	public static Workflow one(long id) {
 		JsonNode json;
 		json = APICall.callAPI(GET_ONE_WORKFLOW_CALL+String.valueOf(id));
@@ -218,6 +228,7 @@ public class Workflow {
 				|| json.isArray()) {
 			return null;
 		}
+        System.out.println(json.toString());
 //		Workflow newWorkflow = new Workflow();
 //		newWorkflow.setId(json.path("id").asText());
 //		newWorkflow.setName(json.get("name").asText());
@@ -230,7 +241,8 @@ public class Workflow {
 //		newWorkflow.setVersionNo(json.path("versionNo").asText());
 		Workflow newWorkflow = null;
 		newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
-		
+
+
 		List<String> list = new ArrayList<String>();
 		for (int i= 0; i < json.path("climateServiceSet").size();i++)
 			list.add(json.path("climateServiceSet").get(i).path("name").asText());
@@ -241,7 +253,15 @@ public class Workflow {
 		for (String set : datasets.split(";"))
 			list.add(set);
 		newWorkflow.setDatasetList(list);
-		
+
+
+		list = new ArrayList<String>();
+		for (int i= 0; i < json.path("userSet").size();i++) {
+            list.add(json.path("userSet").get(i).path("id").asText());
+        }
+		newWorkflow.setUsersetList(list);
+        System.out.println(newWorkflow.getUsersetList());
+
 		String otherWorkflows = json.path("otherWorkflows").asText();
 		list = new ArrayList<String>();
 		for (String workflow:otherWorkflows.split(";"))
@@ -249,15 +269,15 @@ public class Workflow {
 		newWorkflow.setOtherWorkflowsList(list);
 		return newWorkflow; // newWorkflow
 	}
-	
+
 	public static JsonNode create(JsonNode jsonData) {
 		return APICall.postAPI(ADD_WORKFLOW_CALL, jsonData);
 	}
-	
+
 	public static int getNumPage() {
 		JsonNode node = APICall.callAPI(GET_NUM_ENTRY);
 		int numPage = (int) Math.ceil((double)node.path("numEntry").asLong() / PAGESIZE);
 		return numPage;
 	}
-	
+
 }

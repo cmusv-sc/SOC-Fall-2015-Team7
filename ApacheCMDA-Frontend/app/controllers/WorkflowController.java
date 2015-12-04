@@ -26,7 +26,25 @@ public class WorkflowController extends Controller {
 	}
 
 	public static Result workflow(long id) {
-		return ok(workflow.render(Workflow.one(id), null));
+        Workflow wf = Workflow.one(id);
+        String userid = session("id");
+
+        boolean canRead = userid.equals(wf.getAuthorId()+"");
+        if (!canRead) {
+            for (String str : wf.getUsersetList()) {
+                System.out.println(str);
+                if (str.equals(userid)) {
+                    canRead = true;
+                    break;
+                }
+            }
+        }
+
+        if (!canRead) {
+            return ok(error.render("You have no right to see this workflow"));
+        }
+
+		return ok(workflow.render(wf, null));
 	}
 
 	public static Result addWorkflow() {
@@ -67,7 +85,7 @@ public class WorkflowController extends Controller {
 		}
 		return redirect("/workflow/new/workflow");
 	}
-	
+
     public static Result getImage(long id) {
         Workflow tmp = Workflow.one(id);
         return ok(tmp.getImage()).as("image/png");
