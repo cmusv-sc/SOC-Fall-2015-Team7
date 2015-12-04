@@ -31,7 +31,7 @@
 	<div>None for now.</div>
 	} else {
 		@for(sub <- subList){
-		<div>@sub.getSubscriptTargetClass() : @sub.getTargetId()</div>
+		<div><a href="@routes.UserProfileController.getUserProfile(sub.getTargetId())">@sub.getSubscriptTargetClass() : @sub.getTargetId()</a></div>
 		}
 		}
 	</p>
@@ -40,7 +40,7 @@
 	<div>None for now.</div>
 	} else {
 		@for(sub <- subedList){
-		<div>User : @sub.getUserId()</div>
+		<div><a href="@routes.UserProfileController.getUserProfile(sub.getUserId())">User : @sub.getUserId()</a></div>
 		}
 		}
 	</p>
