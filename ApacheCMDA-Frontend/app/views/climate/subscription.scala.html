@@ -16,33 +16,86 @@
  *******************************************************************************@ 
 @(user: metadata.User, subList: List[metadata.Subscription], subedList: List[metadata.Subscription])
 
-@import helper._ 
+@import helper._
+<script type="text/javascript">
+	function getFollowing(userId) {
+			$.ajax({
+				url: "/getUser/"+userId,
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				type: "GET"
+			}).done(function(data) {
+				console.log(data)
+
+			    var username="User Name: "
+			    username += data["userName"]
+				$("#following"+userId).html( username );
+
+
+			});
+
+		}
+</script>
+
+<script type="text/javascript">
+	function getFollower(userId) {
+			$.ajax({
+				url: "/getUser/"+userId,
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				type: "GET"
+			}).done(function(data) {
+				console.log(data)
+
+			    var username="User Name: "
+			    username += data["userName"]
+				$("#follower"+userId).html( username );
+
+
+			});
+
+		}
+</script>
 
 @main("User Subscription List") {
 	<h1>@user.getFirstName() @user.getLastName()'s Subscribe List</h1>
+	<hr>
 	<h3>User ID</h3>
 	<p>@user.getId()</p>
-	<h3>User Name</h3>
-	<p>@user.getUserName()</p>
+	@*<h3>User Name</h3>
+	<p>@user.getUserName()</p>*@
+	<hr>
 	<h3>Name</h3>
 	<p>@user.getFirstName() @user.getLastName()</p>
-	<h3>Subscripted to:</h3>
+	<hr>
+	<h3>Following:</h3>
 	<p>@if(subList.size()==0) {
-	<div>None for now.</div>
+		<div>None for now.</div>
 	} else {
 		@for(sub <- subList){
-		<div><a href="@routes.UserProfileController.getUserProfile(sub.getTargetId())">@sub.getSubscriptTargetClass() : @sub.getTargetId()</a></div>
+		<div><a id="following@sub.getTargetId()" href="@routes.UserProfileController.getUserProfile(sub.getTargetId())"></a></div>
+			<script>getFollowing(@sub.getTargetId());</script>
 		}
 		}
 	</p>
-	<h3>Subscripted by:</h3>
+	<hr>
+	<h3>Followers:</h3>
 	<p>@if(subedList.size()==0) {
 	<div>None for now.</div>
 	} else {
 		@for(sub <- subedList){
-		<div><a href="@routes.UserProfileController.getUserProfile(sub.getUserId())">User : @sub.getUserId()</a></div>
+		<div>
+			<a id="follower@sub.getUserId()" href="@routes.UserProfileController.getUserProfile(sub.getUserId())"></a>
+			<script>getFollower(@sub.getUserId());</script>
+		</div>
+
+
 		}
 		}
 	</p>
+
+
 	
 }
