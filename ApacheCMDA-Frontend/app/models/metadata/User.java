@@ -168,6 +168,8 @@ public class User {
 			Workflow newWorkflow = new Workflow();
 			newWorkflow.setName(json.path("name").asText());
 			newWorkflow.setCreateTime(json.path("createTime").asText());
+			newWorkflow.setId(Long.parseLong(json.path("id").asText()));
+			//System.out.println(json.toString());
 			// newService.setId(json.path("id").asText());
 			// newService.setClimateServiceName(json.get(
 			// 		"name").asText());

@@ -7,3 +7,4 @@ ApacheCMDA-Backend/logs/
 ApacheCMDA-Frontend/logs/
 ApacheCMDA-Frontend/project/target/*
 ApacheCMDA-Backend/project/target/*
+ApacheCMDA-Backend/.idea/libraries/*

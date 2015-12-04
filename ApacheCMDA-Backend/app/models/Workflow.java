@@ -36,7 +36,7 @@ public class Workflow {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String author;
-	private int authorId;
+	private long authorId;
 	private String name;
 	private String purpose;
 	private String input;
@@ -66,7 +66,7 @@ public class Workflow {
 	public Workflow() {
 	}
 	
-	public Workflow(String author, int authorId, String name, String purpose, String input, String output, byte[] image, String contributors, String linksInstructions, Date createTime,
+	public Workflow(String author, long authorId, String name, String purpose, String input, String output, byte[] image, String contributors, String linksInstructions, Date createTime,
 			String versionNo, String dataset, String otherWorkflows, List<User> userSet,
 			List<ClimateService> climateServiceSet, int isQuestion, int answerId) {
 		super();
@@ -137,11 +137,11 @@ public class Workflow {
 		this.author = author;
 	}
 
-	public int getAuthorId() {
+	public long getAuthorId() {
 		return authorId;
 	}
 
-	public void setAuthorId(int authorId) {
+	public void setAuthorId(long authorId) {
 		this.authorId = authorId;
 	}
 
@@ -235,6 +235,10 @@ public class Workflow {
 
 	public void setIsQuestion(int isQuestion) {
 		this.isQuestion = isQuestion;
+	}
+
+	public void setId(long id){
+		this.id = id;
 	}
 
 	@Override

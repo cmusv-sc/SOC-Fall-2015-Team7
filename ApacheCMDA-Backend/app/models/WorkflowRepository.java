@@ -29,5 +29,5 @@ public interface WorkflowRepository extends PagingAndSortingRepository<Workflow,
 
 	List<Workflow> findByName(String name);
 	List<Workflow> findById(long id);
-	List<Workflow> findByAuthorId(int id);
+	List<Workflow> findByAuthorId(long id);
 }

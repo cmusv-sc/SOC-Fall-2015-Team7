@@ -86,7 +86,7 @@ public class WorkflowController extends Controller{
 //Modified by yiming.
 //TODO: Return json of List of workflows. Now we return id string, for testing.
 	public Result getWorkflowsOfUser(long id) {
-		List<Workflow> workflowList = workflowRepository.findById(id);
+		List<Workflow> workflowList = workflowRepository.findByAuthorId(id);
 		System.out.println(workflowList.size());
 		System.out.println(workflowList.toString());
 		List<String> result = new ArrayList<>();
@@ -97,6 +97,7 @@ public class WorkflowController extends Controller{
 			Workflow newflow = new Workflow();
 			newflow.setName(i.getName());
 			newflow.setCreateTime(i.getCreateTime());
+			newflow.setId(i.getId());
 			// result.add(Long.toString(i.getId()));
 			workflowResult.add(newflow);
 		}
