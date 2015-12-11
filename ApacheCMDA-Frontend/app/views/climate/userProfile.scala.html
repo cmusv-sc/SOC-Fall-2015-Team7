@@ -27,8 +27,7 @@
 		} else {
 			<h1>@user.getFirstName() @user.getLastName()'s Profile</h1>
 			<p style="font-size:120%;"> @if(!session.get("id").toString().equals(user.getId().toString())) {
-				<div><li><a style="font-size:120%;" href="@controllers.SubscriptionController.subscribeToUser(Long.parseLong(session.get("id")), user.getId())">
-					Subscribe to this user</a></li></div>
+				<div><li><a style="font-size:120%;" href="/subscription/subscribeTo/id/@session.get("id")/targetId/@user.getId()">Subscribe to this user</a></li></div>
 			} else {
 				<div>This is your profile.</div>
 			}

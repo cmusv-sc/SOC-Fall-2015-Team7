@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f403282-dc62-4658-88db-575f4b2c288b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/db.lock.db" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/climate/success.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/db.h2.db" afterPath="$PROJECT_DIR$/data/db.h2.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/modules/root.iml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/modules/root.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/play2_project_settings.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/play2_project_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/play2_settings.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/play2_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ApacheCMDA-Backend/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SubscriptionController.java" afterPath="$PROJECT_DIR$/app/controllers/SubscriptionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" afterPath="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/db.lock.db" afterPath="$PROJECT_DIR$/data/db.lock.db" />
     </list>
     <ignored path="ApacheCMDA-Frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,36 +47,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="userGroups.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/climate/userGroups.scala.html">
+      <file leaf-file-name="userProfile.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/climate/userProfile.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.5081081">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+              <folding>
+                <element signature="e#1756#1779#0#HTML" expanded="true" />
+                <element signature="e#2152#2175#0#HTML" expanded="true" />
+                <element signature="e#2262#2285#0#HTML" expanded="true" />
+                <element signature="e#2351#2374#0#HTML" expanded="true" />
+                <element signature="e#2432#2455#0#HTML" expanded="true" />
+                <element signature="e#2509#2532#0#HTML" expanded="true" />
+                <element signature="e#2596#2619#0#HTML" expanded="true" />
+                <element signature="e#2687#2710#0#HTML" expanded="true" />
+                <element signature="e#2773#2796#0#HTML" expanded="true" />
+                <element signature="e#2862#2885#0#HTML" expanded="true" />
+                <element signature="e#2955#2978#0#HTML" expanded="true" />
+                <element signature="e#3054#3077#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="85" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
+              <caret line="60" column="67" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserGroup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/metadata/UserGroup.java">
+      <file leaf-file-name="SubscriptionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/SubscriptionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-68.333336">
-              <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.60465115">
+              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserGroupController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/UserGroupController.java">
+      <file leaf-file-name="success.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/climate/success.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53488374">
-              <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,15 +136,17 @@
         <option value="$PROJECT_DIR$/public/html/conditionalSampling.html" />
         <option value="$PROJECT_DIR$/public/html/conditionalSampling2Var.html" />
         <option value="$PROJECT_DIR$/app/util/Constants.java" />
-        <option value="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" />
         <option value="$PROJECT_DIR$/app/views/climate/header.scala.html" />
         <option value="$PROJECT_DIR$/app/views/climate/error.Scala.html" />
         <option value="$PROJECT_DIR$/app/views/climate/error.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
-        <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/climate/userGroup.scala.html" />
         <option value="$PROJECT_DIR$/app/views/climate/userGroups.scala.html" />
         <option value="$PROJECT_DIR$/app/models/metadata/UserGroup.java" />
+        <option value="$PROJECT_DIR$/app/controllers/UserGroupController.java" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/views/climate/userProfile.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/climate/success.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/SubscriptionController.java" />
       </list>
     </option>
   </component>
@@ -157,6 +184,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -186,56 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApacheCMDA-Frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,14 +332,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ApacheCMDA-Backend" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -840,11 +817,12 @@
       <workItem from="1442616005375" duration="4511000" />
       <workItem from="1449107542464" duration="13695000" />
       <workItem from="1449204092879" duration="219000" />
+      <workItem from="1449803871610" duration="1533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19887000" />
+    <option name="totallyTimeSpent" value="21420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -893,22 +871,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/html/conditionalSampling2Var.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/html/correlationMap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -921,9 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#2386#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1123,9 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5064378">
           <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#2386#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,26 +1178,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/climate/userProfile.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5555556">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/climate/error.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51111114">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/climate/workflow.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4141414">
           <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,14 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4040404">
           <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9141631">
-          <caret line="66" column="111" selection-start-line="66" selection-start-column="111" selection-end-line="66" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,7 +1219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/climate/userGroups.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5777778">
           <caret line="41" column="85" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
           <folding />
         </state>
@@ -1295,7 +1227,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/metadata/UserGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-68.333336">
+        <state vertical-scroll-proportion="0.44206008">
           <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1305,11 +1237,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53488374">
-          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.5119048">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="67" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/userProfile.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5081081">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1756#1779#0#HTML" expanded="true" />
+            <element signature="e#2152#2175#0#HTML" expanded="true" />
+            <element signature="e#2262#2285#0#HTML" expanded="true" />
+            <element signature="e#2351#2374#0#HTML" expanded="true" />
+            <element signature="e#2432#2455#0#HTML" expanded="true" />
+            <element signature="e#2509#2532#0#HTML" expanded="true" />
+            <element signature="e#2596#2619#0#HTML" expanded="true" />
+            <element signature="e#2687#2710#0#HTML" expanded="true" />
+            <element signature="e#2773#2796#0#HTML" expanded="true" />
+            <element signature="e#2862#2885#0#HTML" expanded="true" />
+            <element signature="e#2955#2978#0#HTML" expanded="true" />
+            <element signature="e#3054#3077#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/error.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35555556">
+          <caret line="16" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/climate/success.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SubscriptionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60465115">
+          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
