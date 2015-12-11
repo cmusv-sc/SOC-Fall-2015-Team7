@@ -55,7 +55,6 @@ GET     	/assets/*file               						controllers.Assets.at(path="/public",
 
 #User Profile
 GET         /userProfile/:id                                       controllers.UserProfileController.getUserProfile(id:Long)
-<<<<<<< HEAD
 GET         /getUser/:id                                           controllers.UserProfileController.getUserInfo(id:Long)
 #Subscription
 GET             /subscription/getSubscriptionInfo/:id          controllers.SubscriptionController.getSubscriptionInfo(id: Long)
@@ -67,8 +66,6 @@ GET             /groups/id/:id                                  controllers.User
 POST            /groups/createGroup/                            controllers.UserGroupController.newGroup()
 POST            /groups/addNewAdmin/:groupId                    controllers.UserGroupController.newAdmin(groupId: Long)
 POST            /groups/addNewMember/:groupId                   controllers.UserGroupController.newMember(groupId: Long)
-=======
 
 
 POST        /workflow/newComment                                controllers.WorkflowController.newComment()
->>>>>>> origin/lai

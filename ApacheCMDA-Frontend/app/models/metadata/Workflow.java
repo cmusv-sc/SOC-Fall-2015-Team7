@@ -41,7 +41,6 @@ public class Workflow {
 	private List<String> datasetList;
 	private List<String> otherWorkflowsList;
 	private List<String> climateServiceSetList;
-<<<<<<< HEAD
 	private List<String> usersetList;
 
 	public List<String> getUsersetList() {
@@ -51,7 +50,7 @@ public class Workflow {
 	public void setUsersetList(List<String> list) {
 		this.usersetList = new ArrayList<String>();
 		this.usersetList.addAll(list);
-=======
+	}
 	private int isQuestion;
 	private int answerId;
 	
@@ -69,7 +68,6 @@ public class Workflow {
 
 	public void setIsQuestion(int isQuestion) {
 		this.isQuestion = isQuestion;
->>>>>>> origin/lai
 	}
 
 	public List<String> getClimateServiceSetList() {
@@ -305,8 +303,7 @@ public class Workflow {
 		return numPage;
 	}
 
-<<<<<<< HEAD
-=======
+
 	public static void markAnswer(int workflowId, int commentId) {
 		ObjectNode jsonData = Json.newObject(); 
         jsonData.put("workflowId", workflowId);
@@ -316,5 +313,5 @@ public class Workflow {
         APICall.postAPI(Workflow.MARK_ANSWER, jsonData);
 	}
 	
->>>>>>> origin/lai
+
 }

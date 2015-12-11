@@ -28,7 +28,6 @@ public class WorkflowController extends Controller {
 	}
 
 	public static Result workflow(long id) {
-<<<<<<< HEAD
         Workflow wf = Workflow.one(id);
         String userid = session("id");
 
@@ -47,10 +46,8 @@ public class WorkflowController extends Controller {
             return ok(error.render("You have no right to see this workflow"));
         }
 
-		return ok(workflow.render(wf, null));
-=======
+		//return ok(workflow.render(wf, null));
 		return ok(workflow.render(Workflow.one(id), Comment.getComment(id)));
->>>>>>> origin/lai
 	}
 
 	public static Result addWorkflow() {
