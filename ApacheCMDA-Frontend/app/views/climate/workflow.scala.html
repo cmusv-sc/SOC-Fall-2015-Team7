@@ -22,7 +22,11 @@
 	<div class="container">
 
         <h1>@workflow.getName()</h1>
-
+		@if(session.get("id") == String.valueOf(workflow.getAuthorId())) {
+			<a href="@{routes.WorkflowController.deleteWorkflow(workflow.getId())}" class="btn btn-danger">
+				<span class="glyphicon glyphicon-trash"></span> Remove
+			</a>
+		}
         <p class="lead">
             by <a href="#">@workflow.getAuthor()</a>
         </p>
@@ -132,7 +136,7 @@
                     <h4> @oneComment.getUsername()
                     	<small>@oneComment.getDate()</small>
                         @if(workflow.getAnswerId() == 0 && workflow.getIsQuestion() == 1 && session.get("id") == String.valueOf(workflow.getAuthorId())) {                      	
-						    <a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-success btn-lg">
+						    <a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-success">
 						      <span class="glyphicon glyphicon-ok"></span> Mark Answer
 						    </a>
                         }
@@ -170,7 +174,7 @@
                     <p>@workflow.getContributors()</p>
                 </div>
 
-                <div class="well">
+<!--                 <div class="well">
                     <h4>Tags</h4>
                     <ul class="list-unstyled">
                         <li><a href="#">Tags</a>
@@ -182,7 +186,7 @@
                         <li><a href="#">Tags</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="well">
                     <h4>Associated datasets</h4>

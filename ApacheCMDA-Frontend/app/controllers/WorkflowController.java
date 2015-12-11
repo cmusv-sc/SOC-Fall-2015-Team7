@@ -95,7 +95,8 @@ public class WorkflowController extends Controller {
 		}
 		return redirect("/workflow/new/workflow");
 	}
-
+	
+	//TODO: Need to be optimized. Have to call "one" again to get image.
     public static Result getImage(long id) {
         Workflow tmp = Workflow.one(id);
         return ok(tmp.getImage()).as("image/png");
@@ -127,5 +128,10 @@ public class WorkflowController extends Controller {
     public static Result markAnswer(int workflowId, int commentId) {
         Workflow.markAnswer(workflowId, commentId);
         return redirect("/workflow/" + workflowId);
+    }
+    
+    public static Result deleteWorkflow(long id) {
+    	Workflow.delete(id);
+		return redirect("/workflow");
     }
 }

@@ -27,6 +27,7 @@ public class Workflow {
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
     private static final String MARK_ANSWER = Constants.NEW_BACKEND+"workflow/markAnswer";
     private static final String GET_POPULAR_WORKFLOW = Constants.NEW_BACKEND+ "workflow/getPopularWorkflows/json";
+    private static final String DELETE_WORKFLOW = Constants.NEW_BACKEND+ "workflow/deleteWorkflow/id/";
 	private long id;
 	private String name;
 	private String purpose;
@@ -344,5 +345,8 @@ public class Workflow {
         APICall.postAPI(Workflow.MARK_ANSWER, jsonData);
 	}
 	
-
+	public static void delete(long workflowId) {
+		System.out.println(Workflow.DELETE_WORKFLOW + String.valueOf(workflowId));
+		APICall.deleteAPI(Workflow.DELETE_WORKFLOW + String.valueOf(workflowId));
+	}
 }

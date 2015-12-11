@@ -211,6 +211,7 @@ public class WorkflowController extends Controller{
 	}
 
 	public Result deleteWorkflowById(long id) {
+		System.out.println("Workflow delete with id: " + id);
 		Workflow workflow = workflowRepository.findOne(id);
 		if (workflow == null) {
 			System.out.println("Workflow not found with id: " + id);
