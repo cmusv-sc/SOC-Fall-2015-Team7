@@ -10,8 +10,10 @@ import java.util.List;
 import org.apache.commons.codec.binary.Base64;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
 
+import play.libs.Json;
 import util.APICall;
 import util.Constants;
 
@@ -23,6 +25,7 @@ public class Workflow {
 	private static final String GET_NUM_ENTRY = Constants.NEW_BACKEND+"workflow/getNumEntry";
 	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
+    private static final String MARK_ANSWER = Constants.NEW_BACKEND+"workflow/markAnswer";
 	private long id;
 	private String name;
 	private String purpose;
@@ -38,6 +41,7 @@ public class Workflow {
 	private List<String> datasetList;
 	private List<String> otherWorkflowsList;
 	private List<String> climateServiceSetList;
+<<<<<<< HEAD
 	private List<String> usersetList;
 
 	public List<String> getUsersetList() {
@@ -47,6 +51,25 @@ public class Workflow {
 	public void setUsersetList(List<String> list) {
 		this.usersetList = new ArrayList<String>();
 		this.usersetList.addAll(list);
+=======
+	private int isQuestion;
+	private int answerId;
+	
+	public int getAnswerId() {
+		return answerId;
+	}
+
+	public void setAnswerId(int answerId) {
+		this.answerId = answerId;
+	}
+
+	public int getIsQuestion() {
+		return isQuestion;
+	}
+
+	public void setIsQuestion(int isQuestion) {
+		this.isQuestion = isQuestion;
+>>>>>>> origin/lai
 	}
 
 	public List<String> getClimateServiceSetList() {
@@ -209,13 +232,15 @@ public class Workflow {
 		for (int i = 0; i < workflowsNode.size(); i++) {
 			JsonNode json = workflowsNode.path(i);
 			Workflow newWorkflow = new Workflow();
-			newWorkflow.setId(json.path("id").asLong());
-			newWorkflow.setName(json.get("name").asText());
-			newWorkflow.setPurpose(json.path("purpose").asText());
-			newWorkflow.setAuthor(json.path("author").asText());
-			newWorkflow.setAuthorId(json.path("authorId").asInt());
-			newWorkflow.setCreateTime(json.path("createTime").asText());
-			newWorkflow.setVersionNo(json.path("versionNo").asText());
+//			newWorkflow.setId(json.path("id").asLong());
+//			newWorkflow.setName(json.get("name").asText());
+//			newWorkflow.setPurpose(json.path("purpose").asText());
+//			newWorkflow.setAuthor(json.path("author").asText());
+//			newWorkflow.setAuthorId(json.path("authorId").asInt());
+//			newWorkflow.setCreateTime(json.path("createTime").asText());
+//			newWorkflow.setVersionNo(json.path("versionNo").asText());
+//			newWorkflow.setIsQuestion(json.path("isQuestion").asInt());
+			newWorkflow = new Gson().fromJson(json.toString(), Workflow.class);
 			workflows.add(newWorkflow);
 		}
 		return workflows;
@@ -280,4 +305,16 @@ public class Workflow {
 		return numPage;
 	}
 
+<<<<<<< HEAD
+=======
+	public static void markAnswer(int workflowId, int commentId) {
+		ObjectNode jsonData = Json.newObject(); 
+        jsonData.put("workflowId", workflowId);
+        jsonData.put("commentId" , commentId);
+        
+        System.out.println(jsonData.toString());
+        APICall.postAPI(Workflow.MARK_ANSWER, jsonData);
+	}
+	
+>>>>>>> origin/lai
 }

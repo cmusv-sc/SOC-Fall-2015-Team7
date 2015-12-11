@@ -9,7 +9,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import models.metadata.Workflow;
+import models.metadata.Comment;
 import play.data.Form;
+import play.data.DynamicForm;
 import play.libs.Json;
 import play.mvc.*;
 import play.mvc.Http.MultipartFormData;
@@ -26,6 +28,7 @@ public class WorkflowController extends Controller {
 	}
 
 	public static Result workflow(long id) {
+<<<<<<< HEAD
         Workflow wf = Workflow.one(id);
         String userid = session("id");
 
@@ -45,6 +48,9 @@ public class WorkflowController extends Controller {
         }
 
 		return ok(workflow.render(wf, null));
+=======
+		return ok(workflow.render(Workflow.one(id), Comment.getComment(id)));
+>>>>>>> origin/lai
 	}
 
 	public static Result addWorkflow() {
@@ -57,6 +63,7 @@ public class WorkflowController extends Controller {
 		try {
 			jsonData.put("author", session("userName"));
 			jsonData.put("authorId", session("id"));
+			jsonData.put("isQuestion", dc.field("isQuestion").value());
 			jsonData.put("name", dc.field("Name").value());
 			jsonData.put("purpose", dc.field("Purpose").value());
 			jsonData.put("input", dc.field("Input").value());
@@ -89,5 +96,33 @@ public class WorkflowController extends Controller {
     public static Result getImage(long id) {
         Workflow tmp = Workflow.one(id);
         return ok(tmp.getImage()).as("image/png");
+    }
+
+    public static Result newComment() {
+	    DynamicForm df = Form.form().bindFromRequest();
+	    ObjectNode jsonData = Json.newObject();
+	    try {
+	        jsonData.put("username", df.get("username"));
+	        jsonData.put("userid" , df.get("userid"));
+	        jsonData.put("replytoid" , df.get("replytoid"));
+	        jsonData.put("workflowid" , df.get("workflowid"));
+	        jsonData.put("replytoname", df.get("replytoname"));
+	        System.out.println("workflow id to add: "+ df.get("workflowid"));
+	        jsonData.put("comment" , df.get("comment"));
+	        Comment.addComment(jsonData);
+	    } catch (IllegalStateException e) {
+	        e.printStackTrace();
+	        Application.flashMsg(APICall
+                    .createResponse(ResponseType.CONVERSIONERROR));
+	    } catch (Exception e) {
+            e.printStackTrace();
+            Application.flashMsg(APICall.createResponse(ResponseType.UNKNOWN));
+        }
+	    return redirect("/workflow/" + df.get("workflowid"));
+	}
+    
+    public static Result markAnswer(int workflowId, int commentId) {
+        Workflow.markAnswer(workflowId, commentId);
+        return redirect("/workflow/" + workflowId);
     }
 }

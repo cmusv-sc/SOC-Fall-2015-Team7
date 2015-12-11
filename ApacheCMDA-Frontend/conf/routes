@@ -30,7 +30,7 @@ GET			/workflow/:id										controllers.WorkflowController.workflow(id:Long)
 GET			/workflow/new/workflow								controllers.WorkflowController.addWorkflow()
 POST		/workflow/new/workflow								controllers.WorkflowController.newWorkflow()	
 GET			/workflow/image/:id									controllers.WorkflowController.getImage(id:Long)
-
+GET			/workflow/markAnswer/:m_id/:c_id					controllers.WorkflowController.markAnswer(m_id:Int, c_id:Int)
 # Climate Model
 GET			/climate											controllers.ClimateServiceController.home(email ?= null, vfile ?= null, dataset ?= null)
 GET			/climate/tutorial									controllers.ClimateServiceController.tutorial()
@@ -55,6 +55,7 @@ GET     	/assets/*file               						controllers.Assets.at(path="/public",
 
 #User Profile
 GET         /userProfile/:id                                       controllers.UserProfileController.getUserProfile(id:Long)
+<<<<<<< HEAD
 GET         /getUser/:id                                           controllers.UserProfileController.getUserInfo(id:Long)
 #Subscription
 GET             /subscription/getSubscriptionInfo/:id          controllers.SubscriptionController.getSubscriptionInfo(id: Long)
@@ -66,3 +67,8 @@ GET             /groups/id/:id                                  controllers.User
 POST            /groups/createGroup/                            controllers.UserGroupController.newGroup()
 POST            /groups/addNewAdmin/:groupId                    controllers.UserGroupController.newAdmin(groupId: Long)
 POST            /groups/addNewMember/:groupId                   controllers.UserGroupController.newMember(groupId: Long)
+=======
+
+
+POST        /workflow/newComment                                controllers.WorkflowController.newComment()
+>>>>>>> origin/lai

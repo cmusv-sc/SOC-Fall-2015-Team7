@@ -77,7 +77,11 @@
         <tbody style="font-size: 14px;">
          	@for(oneWorkflow <- workflows){
             <tr>
-                <td class="text-center"><i class="text-primary">tag</i></td>
+                <td class="text-center">
+                	@if(oneWorkflow.getIsQuestion() == 1) {
+                		<span style="font-size:2em;" class="glyphicon glyphicon-question-sign"></span>
+                	}
+                </td>
                 <td>
                     <h4><a href="/workflow/@oneWorkflow.getId()">@oneWorkflow.getName() </a><br><small>@oneWorkflow.getPurpose()</small></h4>
                 </td>

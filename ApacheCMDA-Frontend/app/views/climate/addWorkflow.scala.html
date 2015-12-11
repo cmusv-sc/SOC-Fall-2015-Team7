@@ -27,6 +27,12 @@
      @if(true){
 	    <h1>Add a new workflow</h1>
 	    @form(action = routes.WorkflowController.newWorkflow(),'enctype -> "multipart/form-data") {   
+	    
+  	        @inputText(
+	        	workflowForm("isQuestion"),
+	        	'_label -> "Is it a question?"
+	        ) 
+	        
 	        @inputText(
 	        	workflowForm("Name"),
 	        	'_label -> "Name"

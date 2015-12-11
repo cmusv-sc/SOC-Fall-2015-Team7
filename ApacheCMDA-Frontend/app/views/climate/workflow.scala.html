@@ -104,9 +104,14 @@
 
                 <div class="well">
                     <h4>Leave a Comment:</h4>
-                    <form role="form">
+                    <form method="post" action="/workflow/newComment" role="form">
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="comment"></textarea>
+                            <input type="hidden" name="replytoid" value="@workflow.getAuthorId()">
+                            <input type="hidden" name="workflowid" value="@workflow.getId()">
+                            <input type="hidden" name="username" value="@session.get("userName")">
+                            <input type="hidden" name="userid" value="@session.get("id")">
+                            <input type="hidden" name="replytoname" value="@workflow.getAuthor()">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -114,27 +119,47 @@
 
                 <hr>
 
-                <div class="well">
-                    <div>
-                        <h4>User
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        <p>123 </p>
-                    </div>
+                @for(oneComment <- comments){
+                @if(oneComment.getId() == workflow.getAnswerId()) {
+                	<div style="background: rgba(204, 255, 229, 0.3);" class="well">
+                	<span class="glyphicon glyphicon-star-empty"></span> Answer
+        			<a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-default">
+						<span class="glyphicon glyphicon-remove"></span> Cancel
+					</a>
+                } else {
+                	<div class="well">
+                }
+                    <h4> @oneComment.getUsername()
+                    	<small>@oneComment.getDate()</small>
+                        @if(workflow.getAnswerId() == 0 && workflow.getIsQuestion() == 1 && session.get("id") == String.valueOf(workflow.getAuthorId())) {                      	
+						    <a href="@{"/workflow/markAnswer/"+workflow.getId()+"/"+oneComment.getId()}" class="btn btn-success btn-lg">
+						      <span class="glyphicon glyphicon-ok"></span> Mark Answer
+						    </a>
+                        }
+                   	</h4>
+                    <p>  Reply to @oneComment.getReplytoname(): <br>@oneComment.getComment() </p>
 
-                    <button class="btn btn-primary" data-toggle="collapse" data-target="#reply1">Reply</button>
 
-                    <div id="reply1" class="collapse">
-                        <h4>Reply:</h4>
-                        <form role="form">
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="@{"#" + oneComment.getId()}">Reply</button>
+
+                    <div id="@oneComment.getId()" class="collapse">
+                        <h4>Reply: </h4>
+                        <form method="post" action="/workflow/newComment" role="form">
                             <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name="comment"></textarea>
+                                <input type="hidden" name="replytoid" value="@oneComment.getUserid()">
+                                <input type="hidden" name="workflowid" value="@workflow.getId()">
+                                <input type="hidden" name="username" value="@session.get("userName")">
+                                <input type="hidden" name="userid" value="@session.get("id")">
+                                <input type="hidden" name="replytoname" value="@oneComment.getUsername()">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
 
                 </div>
+                }
+
 
             </div> <!-- cols-8 end -->
 
