@@ -19,13 +19,11 @@
 @import helper._
 
 @main("User Groups") {
-    <table class="table forum table-striped">
+    <table class="table table-striped table-bordered table-condensed ex2 tablesorter" id = "csTable">
         <thead>
             <tr>
                 <th class="cell-stat">Group ID</th>
-                <th>
-                  <h3>GroupName</h3>
-                </th>
+                <th>GroupName</th>
                 <th class="cell-stat text-center hidden-xs hidden-sm">AuthorId</th>
                 <th class="cell-stat text-center hidden-xs hidden-sm">Members</th>
             </tr>
@@ -34,11 +32,11 @@
         <tbody>
             @for(group <- groups){
             <tr>
-                <td>@group.getId</td>
+                <td><h4>@group.getId</h4></td>
                 <td>
                     <h4><a href="/groups/id/@group.getId()">@group.getGroupName() </a></h4>
                 </td>
-                <td class="text-center hidden-xs hidden-sm"><a href="/userProfile/@group.getAuthorId()">@group.getAuthor()</a></td>
+                <td class="text-center hidden-xs hidden-sm"><a href="/userProfile/@group.getAuthorId()"><h4>@group.getAuthor()</h4></a></td>
                 <td>@group.getAdminList().size() Admin<br> @group.getMemberList().size() Member</td>
             </tr>
             }
