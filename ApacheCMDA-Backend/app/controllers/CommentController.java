@@ -10,6 +10,8 @@ import com.google.gson.Gson;
 
 import models.Comment;
 import models.CommentRepository;
+import models.Workflow;
+import models.WorkflowRepository;
 import play.mvc.*;
 
 import java.util.Date;
@@ -20,11 +22,13 @@ import java.util.List;
 public class CommentController extends Controller
 {
     private final CommentRepository commentRepository;
+    private final WorkflowRepository workflowRepository;
 
     @Inject
-    public CommentController(final CommentRepository commentRepository)
+    public CommentController(final CommentRepository commentRepository,final WorkflowRepository workflowRepository)
     {
         this.commentRepository = commentRepository;
+        this.workflowRepository = workflowRepository;
     }
 
     public Result testCommentFunction()
@@ -54,6 +58,12 @@ public class CommentController extends Controller
         {
             Comment newComment = new Comment(username,userid,replytoid, replytoname, workflowid, comment, date);
             Comment savedComment = commentRepository.save(newComment);
+            
+            List<Workflow> result = workflowRepository.findById(workflowid);
+            Workflow flow = result.get(0);
+            flow.addPopularity();
+            workflowRepository.save(flow);
+            
             System.out.println("Comment saved: " + savedComment.getId());
             return created(new Gson().toJson(savedComment.getId()));
         } catch (PersistenceException pe) {

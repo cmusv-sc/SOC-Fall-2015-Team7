@@ -60,6 +60,7 @@
         </ul>
     </nav>
 	<a href="workflow/new/workflow" class="btn btn-info" role="button">New Workflow</a>
+    <a href="workflow/popular/show" class="btn btn-info" role="button">Popular Workflow</a>
     <!--<table class="table forum table-striped">-->
 	<table class="table table-striped table-bordered table-condensed ex2 tablesorter" id = "csTable">
         <thead>
@@ -81,6 +82,9 @@
                 	@if(oneWorkflow.getIsQuestion() == 1) {
                 		<span style="font-size:2em;" class="glyphicon glyphicon-question-sign"></span>
                 	}
+                    @if(oneWorkflow== workflows.get(0)){
+                        <span style="color:red;">top</span>
+                    }
                 </td>
                 <td>
                     <h4><a href="/workflow/@oneWorkflow.getId()">@oneWorkflow.getName() </a><br><small>@oneWorkflow.getPurpose()</small></h4>

@@ -1,9 +1,6 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,6 +19,7 @@ import models.User;
 import models.UserRepository;
 import models.Workflow;
 import models.WorkflowRepository;
+import models.WorkflowSortByPopularity;
 import play.mvc.Controller;
 import play.mvc.Result;
 import org.apache.commons.codec.binary.Base64;
@@ -57,16 +55,49 @@ public class WorkflowController extends Controller{
 		return ok(result);
 	}
 
+	public Result getPopularWorkflows(String format) {
+		Iterable<Workflow> workflowIterable = workflowRepository.findAll();
+		List<Workflow> workflowList = new ArrayList<Workflow>();
+		for (Workflow workflow : workflowIterable) {
+			workflowList.add(workflow);
+		}
+		String result = new String();
+		if (workflowList.size()==0){
+			return ok(result);
+		}
+		Collections.sort(workflowList, new WorkflowSortByPopularity());
+		List<Workflow> topList= new ArrayList<>();
+		for(int i=0;i<3;i++){//get top three
+			topList.add(workflowList.get(i));
+		}
+		result= new Gson().toJson(topList);
+		return ok(result);
+	}
+
 	public Result getPageWorkflows(String format, int page, int size) {
 
 		int pageStartFrom1 = page-1;
 		Page<Workflow> workflowPage = workflowRepository.findAll(new PageRequest(pageStartFrom1, size));
 
 		List<Workflow> workflowList = workflowPage.getContent();
-
+		List<Workflow> newList= new ArrayList<>();
+		
+		int num= workflowList.size();
+		int top=0;
+		if(num!=0){
+			for(int i=0;i<num;i++){
+				if(workflowList.get(i).getPopularity()>workflowList.get(top).getPopularity())
+					top=i;
+			}
+		}
+		newList.add(workflowList.get(top));
+		for(int i=0;i<num;i++){
+			if(i!=top)
+				newList.add(workflowList.get(i));
+		}
 		String workflows = null;
 		if (format.equals("json")) {
-			workflows = new Gson().toJson(workflowList);
+			workflows = new Gson().toJson(newList);
 		}
 
 		return ok(workflows);
@@ -77,7 +108,10 @@ public class WorkflowController extends Controller{
 
 		String workflow = null;
 		if (format.equals("json")) {
-			workflow = new Gson().toJson(result.get(0));
+			Workflow flow = result.get(0);
+			flow.addPopularity();
+			workflowRepository.save(flow);
+			workflow = new Gson().toJson(flow);
 		}
 
 		return ok(workflow);

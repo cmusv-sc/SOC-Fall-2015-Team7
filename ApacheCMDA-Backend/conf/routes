@@ -31,6 +31,8 @@ POST		  	/workflow/newWorkflow						@controllers.WorkflowController.addWorkflow
 DELETE        /workflow/deleteWorkflow/id/:id 				@controllers.WorkflowController.deleteWorkflowById(id: Long)
 POST			/workflow/markAnswer						@controllers.WorkflowController.markAnswer
 GET             /workflow/getWorkflowsOfUser/:id            @controllers.WorkflowController.getWorkflowsOfUser(id: Long)
+GET				/workflow/getPopularWorkflows/json			@controllers.WorkflowController.getPopularWorkflows(format: String= "json")
+
 
 
 # Climate Service

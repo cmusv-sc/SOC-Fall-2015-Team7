@@ -31,6 +31,10 @@ GET			/workflow/new/workflow								controllers.WorkflowController.addWorkflow()
 POST		/workflow/new/workflow								controllers.WorkflowController.newWorkflow()	
 GET			/workflow/image/:id									controllers.WorkflowController.getImage(id:Long)
 GET			/workflow/markAnswer/:m_id/:c_id					controllers.WorkflowController.markAnswer(m_id:Int, c_id:Int)
+GET			/workflow/popular/show								controllers.WorkflowController.popular()
+
+
+
 # Climate Model
 GET			/climate											controllers.ClimateServiceController.home(email ?= null, vfile ?= null, dataset ?= null)
 GET			/climate/tutorial									controllers.ClimateServiceController.tutorial()

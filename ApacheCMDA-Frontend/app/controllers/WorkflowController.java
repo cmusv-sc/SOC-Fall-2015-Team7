@@ -30,7 +30,9 @@ public class WorkflowController extends Controller {
 	public static Result workflow(long id) {
         Workflow wf = Workflow.one(id);
         String userid = session("id");
-
+        if(userid==null){
+        	return ok(error.render("You should log in first"));
+        }
         boolean canRead = userid.equals(wf.getAuthorId()+"");
         if (!canRead) {
             for (String str : wf.getUsersetList()) {
@@ -52,6 +54,10 @@ public class WorkflowController extends Controller {
 
 	public static Result addWorkflow() {
 		return ok(addWorkflow.render(workflowForm));
+	}
+
+	public static Result popular(){
+		return ok(views.html.climate.popular.render(Workflow.popular()));
 	}
 
 	public static Result newWorkflow() {

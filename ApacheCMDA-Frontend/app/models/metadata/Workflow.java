@@ -26,11 +26,13 @@ public class Workflow {
 	private static final String GET_ONE_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/getOneWorkflow/id/";
 	private static final String ADD_WORKFLOW_CALL = Constants.NEW_BACKEND+"workflow/newWorkflow";
     private static final String MARK_ANSWER = Constants.NEW_BACKEND+"workflow/markAnswer";
+    private static final String GET_POPULAR_WORKFLOW = Constants.NEW_BACKEND+ "workflow/getPopularWorkflows/json";
 	private long id;
 	private String name;
 	private String purpose;
 	private String author;
 	private int authorId;
+	private int popularity;
 	private String input;
 	private String output;
 	private byte[] image;
@@ -86,6 +88,14 @@ public class Workflow {
 	public void setDatasetList(List<String> datasetList) {
 		this.datasetList = new ArrayList<String>();
 		this.datasetList.addAll(datasetList);
+	}
+
+	public void setPopularity(int popularity){
+		this.popularity= popularity;
+	}
+	
+	public int getPopularity(){
+		return this.popularity;
 	}
 
 	public List<String> getOtherWorkflowsList() {
@@ -215,6 +225,27 @@ public class Workflow {
 			workflows.add(newWorkflow);
 		}
 
+		return workflows;
+	}
+
+	public static List<Workflow> popular(){
+		List<Workflow> workflows = new ArrayList<Workflow>();
+		JsonNode workflowsNode = APICall.callAPI(GET_POPULAR_WORKFLOW);
+		if (workflowsNode == null || workflowsNode.has("error")
+				|| !workflowsNode.isArray()) {
+			return workflows;
+		}
+		for (int i = 0; i < workflowsNode.size(); i++) {
+			JsonNode json = workflowsNode.path(i);
+			Workflow newWorkflow = new Workflow();
+			newWorkflow.setId(json.path("id").asLong());
+			newWorkflow.setName(json.get("name").asText());
+			newWorkflow.setPurpose(json.path("purpose").asText());
+			newWorkflow.setAuthor(json.path("author").asText());
+			newWorkflow.setCreateTime(json.path("createTime").asText());
+			newWorkflow.setVersionNo(json.path("versionNo").asText());
+			workflows.add(newWorkflow);
+		}
 		return workflows;
 	}
 

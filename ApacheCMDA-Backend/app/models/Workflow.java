@@ -41,6 +41,7 @@ public class Workflow {
 	private String purpose;
 	private String input;
 	private String output;
+	private int popularity;
 	@Column(columnDefinition="MEDIUMBLOB")
 	private byte[] image;
 	private String contributors;
@@ -88,6 +89,7 @@ public class Workflow {
 		this.climateServiceSet = climateServiceSet;
 		this.isQuestion = isQuestion;
 		this.setAnswerId(answerId);
+		this.popularity= 1;
 	}
 
 	public String getName() {
@@ -143,6 +145,18 @@ public class Workflow {
 
 	public void setAuthorId(long authorId) {
 		this.authorId = authorId;
+	}
+
+	public void setPopularity(int popularity){
+		this.popularity= popularity;
+	}
+	
+	public int getPopularity(){
+		return this.popularity;
+	}
+	
+	public void addPopularity(){
+		this.popularity+= 1;
 	}
 
 //	public long getRootWorkflowId() {
@@ -246,7 +260,7 @@ public class Workflow {
 		return "Workflow [id=" + id + ", name=" + name + ", purpose=" + purpose
 				+ ", createTime=" + createTime + ", versionNo=" + versionNo
 				+ ", userSet=" + userSet //+ ", rootWorkflowId=" + rootWorkflowId 
-				+ ", climateServiceSet=" + climateServiceSet + "]";
+				+ ", climateServiceSet=" + climateServiceSet +", popularity="+ popularity + "]";
 	}
 	
 }
